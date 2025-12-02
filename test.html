@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Nguyen | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. GLOBAL VARIABLES & RESET --- */
+        :root {
+            --primary-color: #0f172a; /* Deep Navy */
+            --accent-color: #3b82f6;  /* Tech Blue */
+            --text-dark: #334155;     /* Slate Grey */
+            --text-light: #64748b;    /* Light Grey */
+            --bg-light: #f8fafc;      /* Off White */
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 5rem 1.5rem; /* Generous spacing */
+        }
+
+        /* Utility for labels (Who Am I, What Drives Me) */
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- 2. INTRO SECTION --- */
+        .intro-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            min-height: 90vh; /* Takes up most of the screen */
+            display: flex;
+            align-items: center;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-welcome {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-name {
+            font-family: 'Playfair Display', serif; /* Elegant serif for name */
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .intro-bullets {
+            list-style: none;
+        }
+
+        .intro-bullets li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .intro-bullets li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .intro-image img {
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px var(--bg-light); /* stylized shadow */
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .intro-image img:hover {
+            filter: grayscale(0%);
+        }
+
+        .intro-quote {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* --- 3. CARDS SECTION --- */
+        .cards-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .cards-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05); /* Glass effect */
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            background: var(--white);
+            transform: translateY(-10px);
+        }
+
+        .card:hover h2, .card:hover p {
+            color: var(--primary-color);
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #cbd5e1; /* Light text on dark bg */
+            margin-bottom: 2rem;
+        }
+
+        .arrow {
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid var(--accent-color);
+            border-right: 2px solid var(--accent-color);
+            transform: rotate(45deg);
+            align-self: flex-end;
+        }
+
+        /* --- 4. WHO SECTION (About) --- */
+        .who-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .who-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .who-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .skills-row img {
+            height: 35px;
+            width: auto;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .skills-row img:hover {
+            opacity: 1;
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        /* --- 5. VALUES SECTION --- */
+        .values-section {
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .values-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .values-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .value-card .icon img {
+            height: 48px;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .btn-learn-more {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-learn-more:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- 6. RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .intro-grid, .who-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .intro-image {
+                order: -1; /* Moves image to top on mobile */
+                max-width: 80%;
+                margin: 0 auto;
+            }
+
+            .intro-name {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <main>
+    <section class="intro-section" id="home">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <p class="intro-welcome">Welcome, nice to meet you!</p>
+          <h1 class="intro-name">MY NAME IS<br>ROBERT NGUYEN</h1>
+          <ul class="intro-bullets">
+            <li>I bring experience across business, analytics, and strategy.</li>
+            <li>I collaborate well across teams, functions, and cultures.</li>
+            <li>I use data and context to guide confident, thoughtful decisions.</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+          <img src="https://placehold.co/500x600/e2e8f0/1e293b?text=Robert+Photo" alt="Robert Nguyen">
+          <p class="intro-quote">"Every accomplishment starts with the decision to try"</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-section">
+      <div class="cards-grid">
+        
+        <a href="https://Robertn02.github.io/website/experience/" class="card card-story">
+          <h2>MY EXPERIENCE</h2>
+          <p>A look at the path that shaped how I think and work across business and analytics. Explore key roles, lessons, and moments.</p>
+          <div class="arrow"></div>
+        </a>
+    
+        <a href="https://Robertn02.github.io/website/projects/" class="card card-experience">
+          <h2>MY PROJECTS</h2>
+          <p>Practical work applying analytics to real questions and decisions. Click through to see how I break problems down.</p>
+          <div class="arrow"></div>
+        </a>
+    
+        <a href="https://Robertn02.github.io/website/blogs" class="card card-work">
+          <h2>MY INSIGHTS</h2>
+          <p>Explorations on business, industries, and strategy. Exploring ideas and patterns that shape how companies compete.</p>
+          <div class="arrow"></div>
+        </a>
+    
+      </div>
+    </section>
+
+    <section class="who-section">
+      <div class="who-grid">
+        <div class="who-image">
+             <img src="https://placehold.co/400x500/e2e8f0/1e293b?text=Profile+2" alt="Robert Nguyen">
+        </div>
+        <div class="who-content">
+          <span class="section-label">WHO AM I</span>
+          <h2 class="who-title">PROBLEM SOLVER WITH A BACKGROUND IN ANALYTICS, FINANCE, AND TECHNOLOGY</h2>
+          <p>I’m interested in how businesses run and how data can help teams make clear decisions. With a background in finance and data analytics, I focus on understanding problems, bringing structure, and working with others to move ideas into action.</p>
+          <p>In recent years, I’ve built experience in consulting, research, and business settings, including work in aviation, operations, and technology.</p>
+          
+    
+          <div class="skills-row">
+            <img src="Images/Logos/Excel.png" alt="Excel" onerror="this.style.display='none';">
+            <img src="Images/Logos/SQL.png" alt="SQL" onerror="this.style.display='none';">
+            <img src="Images/Logos/Python.png" alt="Python" onerror="this.style.display='none';">
+            <img src="Images/Logos/Tableau.png" alt="Tableau" onerror="this.style.display='none';">
+            <span style="font-weight:bold; color:#cbd5e1;">EXCEL / SQL / PYTHON / TABLEAU / SAP / POWER BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section">
+      <div class="values-container">
+        <span class="section-label">WHAT DRIVES ME</span>
+        <h2 class="values-title">VALUES I CARRY INTO BUSINESS</h2>
+    
+        <div class="values-grid">
+          <div class="value-card value-collab">
+            <div class="icon"><img src="https://placehold.co/50x50?text=Icon" alt="Collaboration"></div>
+            <h3>COLLABORATION</h3>
+            <p>“Good work happens when people think together. I listen, ask questions, and align early so everyone moves in the same direction.”</p>
+          </div>
+    
+          <div class="value-card value-resilience">
+            <div class="icon"><img src="https://placehold.co/50x50?text=Icon" alt="Reliability"></div>
+            <h3>RELIABILITY</h3>
+            <p>“Projects move best with steady effort. I track priorities, stay calm under pressure, and follow through.”</p>
+          </div>
+    
+          <div class="value-card value-courage">
+            <div class="icon"><img src="https://placehold.co/50x50?text=Icon" alt="Initiative"></div>
+            <h3>INITIATIVE</h3>
+            <p>“When direction is unclear, I take steps to explore. Speaking up and sharing ideas early helps the team move faster.”</p>
+          </div>
+        </div>
+    
+        <div class="values-button">
+          <a href="https://Robertn02.github.io/website/experience/" class="btn-learn-more">LEARN MORE ABOUT MY JOURNEY</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
