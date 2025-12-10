@@ -1,429 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Nguyen | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robert Nguyen | Portfolio</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- 1. GLOBAL VARIABLES & RESET --- */
-        :root {
-            --primary-color: #0f172a; /* Deep Navy */
-            --accent-color: #3b82f6;  /* Tech Blue */
-            --text-dark: #334155;     /* Slate Grey */
-            --text-light: #64748b;    /* Light Grey */
-            --bg-light: #f8fafc;      /* Off White */
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-            --max-width: 1200px;
-        }
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --surface: #0f172a;
+      --surface-soft: #111827;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --accent: #10b981;
+      --border: #e2e8f0;
+      --shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+      --max-width: 1180px;
+      --radius: 16px;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Playfair Display', 'Times New Roman', serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08), transparent 32%),
+        radial-gradient(circle at 84% 12%, rgba(16, 185, 129, 0.08), transparent 30%),
+        var(--bg);
+      color: #0f172a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    main { padding-top: 92px; }
+    section { padding: 5rem 1.5rem; }
+    .shell { max-width: var(--max-width); margin: 0 auto; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.4);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      background: #e0f2fe;
+      color: var(--primary);
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 0.75rem;
+      border-radius: 10px;
+      background: #eef2ff;
+      color: #1f2937;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid #d9e3ff;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-        }
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+    }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #e2e8f0;
+      letter-spacing: 0.06em;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-menu a {
+      color: #cbd5e1;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .nav-menu a:hover { color: #fff; transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(120deg, var(--primary), #3b82f6);
+      color: #fff;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      padding: 0.45rem 0.6rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+    /* Hero */
+    .intro-section { padding-top: 6rem; }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.75rem;
+      align-items: center;
+    }
+    .intro-welcome { margin-bottom: 0.35rem; }
+    .intro-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      margin: 1.25rem 0 1.75rem;
+      color: var(--surface);
+      line-height: 1.2;
+    }
+    .intro-bullets { list-style: none; display: grid; gap: 0.85rem; }
+    .intro-bullets li {
+      position: relative;
+      padding-left: 1.6rem;
+      color: #475569;
+      font-weight: 500;
+    }
+    .intro-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(120deg, var(--accent), var(--primary));
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12);
+    }
+    .intro-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .btn-secondary {
+      padding: 0.68rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      font-weight: 700;
+      color: var(--surface);
+      background: #fff;
+      transition: 0.18s ease;
+    }
+    .btn-secondary:hover { box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transform: translateY(-2px); }
+    .intro-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+    .intro-image {
+      position: relative;
+      justify-self: center;
+    }
+    .intro-image img {
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .intro-image::after {
+      content: '';
+      position: absolute;
+      inset: 12% -8% auto auto;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.24), transparent 70%);
+      filter: blur(2px);
+      z-index: -1;
+    }
+    .intro-quote {
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-style: italic;
+      text-align: center;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    /* Cards */
+    .cards-section {
+      background: linear-gradient(120deg, #0f172a, #0b1224);
+      color: #e2e8f0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .cards-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      gap: 1.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      padding: 2.1rem;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+    .card h2 { font-size: 1.2rem; letter-spacing: 0.05em; }
+    .card p { color: #cbd5e1; }
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.24);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+    }
+    .arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: grid;
+      place-items: center;
+      margin-top: auto;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .arrow::before {
+      content: '\2197';
+      color: #fff;
+      font-size: 1rem;
+    }
 
-        section {
-            padding: 5rem 1.5rem; /* Generous spacing */
-        }
+    /* About */
+    .section-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .who-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.15rem;
+      box-shadow: var(--shadow);
+    }
+    .who-title {
+      font-size: 1.8rem;
+      color: var(--surface);
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+    }
+    .who-content p { color: #475569; margin-bottom: 1.1rem; }
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #cbd5e1;
+      margin-top: 1.25rem;
+    }
+    .skills-row img { height: 38px; filter: grayscale(100%); opacity: 0.7; transition: 0.2s ease; }
+    .skills-row img:hover { filter: grayscale(0); opacity: 1; transform: translateY(-2px); }
 
-        /* Utility for labels (Who Am I, What Drives Me) */
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: block;
-        }
+    /* Values */
+    .values-section { background: linear-gradient(120deg, #eef2ff, #e0f2fe); }
+    .values-head { text-align: center; margin-bottom: 2.5rem; }
+    .values-title {
+      font-size: 2rem;
+      color: var(--surface);
+      max-width: 640px;
+      margin: 0.5rem auto 0;
+      line-height: 1.35;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto 2.5rem;
+    }
+    .value-card {
+      position: relative;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.9rem 1.9rem 1.7rem;
+      border: 1px solid #d9e3ff;
+      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08);
+      overflow: hidden;
+    }
+    .value-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(120deg, rgba(37,99,235,0.12), rgba(16,185,129,0.12));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .value-card:hover::before { opacity: 1; }
+    .value-card h3 { margin: 0.5rem 0 0.6rem; color: var(--surface); position: relative; }
+    .value-card p { color: #475569; font-style: italic; position: relative; }
+    .icon img { height: 40px; }
+    .btn-ghost {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid #c7d2fe;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+    .btn-ghost:hover { box-shadow: 0 10px 25px rgba(37, 99, 235, 0.14); transform: translateY(-2px); }
 
-        /* --- 2. INTRO SECTION --- */
-        .intro-section {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            min-height: 90vh; /* Takes up most of the screen */
-            display: flex;
-            align-items: center;
-        }
+    /* Projects */
+    .projects-section { background: #fff; }
+    .projects-head { text-align: center; margin-bottom: 2.5rem; }
+    .projects-title { font-size: 2rem; color: var(--surface); margin-top: 0.4rem; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 22px 52px rgba(15, 23, 42, 0.18); border-color: rgba(37, 99, 235, 0.35); }
+    .project-media { aspect-ratio: 16/10; overflow: hidden; background: #0f172a; }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.25s ease; }
+    .project-card:hover img { transform: scale(1.04); }
+    .project-body { padding: 1.4rem 1.5rem 1.6rem; display: grid; gap: 0.6rem; flex: 1; }
+    .project-meta { color: var(--muted); font-weight: 700; letter-spacing: 0.08em; font-size: 0.78rem; }
+    .project-title { font-size: 1.2rem; color: var(--surface); line-height: 1.35; }
+    .project-desc { color: #475569; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
+    .project-tag { background: #eef2ff; color: var(--surface); padding: 0.35rem 0.8rem; border-radius: 999px; font-weight: 700; font-size: 0.78rem; border: 1px solid #d9e3ff; }
+    .projects-footer { text-align: center; color: var(--muted); margin-top: 2.5rem; }
+    .project-slider { overflow: hidden; margin-top: 1.6rem; }
+    .slider-track { display: flex; gap: 1rem; width: max-content; animation: slide 24s linear infinite; }
+    .slider-track img { height: 140px; width: auto; border-radius: 12px; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2); }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
+    /* Insights */
+    .insights-section { background: #0f172a; color: #e2e8f0; }
+    .insights-head { max-width: 780px; margin: 0 auto 2rem; text-align: center; }
+    .insights-title { font-size: 2rem; margin-top: 0.4rem; color: #fff; }
+    .insights-grid { display: grid; gap: 1.5rem; max-width: var(--max-width); margin: 0 auto; }
+    .blog-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 2fr;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 18px 38px rgba(0,0,0,0.25); }
+    .blog-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+    .blog-media img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-body { padding: 1.3rem 1.4rem; display: grid; gap: 0.45rem; align-content: center; }
+    .blog-tag { letter-spacing: 0.12em; font-weight: 700; font-size: 0.75rem; color: #93c5fd; }
+    .blog-title { font-family: var(--font-serif); font-size: 1.25rem; color: #fff; line-height: 1.35; }
+    .blog-desc { color: #cbd5e1; }
+    .blog-meta { display: flex; gap: 1rem; font-size: 0.8rem; color: #94a3b8; letter-spacing: 0.05em; text-transform: uppercase; }
+    .insights-footer { text-align: center; margin-top: 2rem; }
+    .view-all { color: #93c5fd; font-weight: 700; }
 
-        .intro-welcome {
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
+    /* Contact */
+    .contact-section { background: #fff; }
+    .contact-card {
+      background: linear-gradient(135deg, #0b1224, #0f172a);
+      color: #fff;
+      border-radius: 22px;
+      padding: 2.4rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .contact-title { font-size: 2rem; margin: 0.3rem 0 0.8rem; }
+    .contact-subtitle { color: #cbd5e1; margin-bottom: 1.2rem; }
+    .contact-info ul { list-style: none; display: grid; gap: 0.9rem; }
+    .contact-info li { display: flex; align-items: center; gap: 0.85rem; color: #e2e8f0; }
+    .contact-info img { height: 40px; width: 40px; padding: 8px; background: rgba(255, 255, 255, 0.08); border-radius: 12px; }
+    .contact-links { display: flex; gap: 0.75rem; }
+    .contact-links img { height: 34px; width: 34px; background: none; padding: 0; }
+    .contact-form { background: #fff; border-radius: 16px; padding: 1.8rem; color: #0f172a; display: grid; gap: 0.9rem; }
+    .contact-form label { font-weight: 700; font-size: 0.95rem; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font: inherit;
+      color: #0f172a;
+      background: #f8fafc;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+      background: #fff;
+    }
+    .contact-form textarea { resize: vertical; min-height: 140px; }
+    .contact-submit { justify-self: start; }
+    .thank-you { display: none; color: var(--accent); font-weight: 700; }
 
-        .intro-name {
-            font-family: 'Playfair Display', serif; /* Elegant serif for name */
-            font-size: 3.5rem;
-            line-height: 1.1;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
+    /* Footer */
+    .site-footer {
+      background: #0b1224;
+      color: #cbd5e1;
+      padding: 2rem 1.5rem;
+    }
+    .footer-shell { max-width: var(--max-width); margin: 0 auto; display: grid; gap: 1rem; align-items: center; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; color: #fff; }
+    .footer-nav ul { list-style: none; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .footer-nav a { color: #cbd5e1; font-weight: 600; }
+    .footer-nav a:hover { color: #fff; }
 
-        .intro-bullets {
-            list-style: none;
-        }
+    /* Responsive */
+    @media (max-width: 820px) {
+      .nav-menu {
+        position: absolute;
+        top: 68px;
+        right: 1.25rem;
+        background: rgba(15, 23, 42, 0.95);
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: none;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+      .nav-menu.show { display: flex; }
+      .menu-toggle { display: inline-flex; }
+      .btn-primary { width: 100%; text-align: center; }
+    }
 
-        .intro-bullets li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .intro-bullets li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -5px;
-        }
-
-        .intro-image img {
-            border-radius: 20px;
-            box-shadow: 20px 20px 0px var(--bg-light); /* stylized shadow */
-            filter: grayscale(100%);
-            transition: var(--transition);
-        }
-
-        .intro-image img:hover {
-            filter: grayscale(0%);
-        }
-
-        .intro-quote {
-            margin-top: 1.5rem;
-            font-style: italic;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        /* --- 3. CARDS SECTION --- */
-        .cards-section {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .cards-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05); /* Glass effect */
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            transition: var(--transition);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            background: var(--white);
-            transform: translateY(-10px);
-        }
-
-        .card:hover h2, .card:hover p {
-            color: var(--primary-color);
-        }
-
-        .card h2 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: #cbd5e1; /* Light text on dark bg */
-            margin-bottom: 2rem;
-        }
-
-        .arrow {
-            width: 20px;
-            height: 20px;
-            border-top: 2px solid var(--accent-color);
-            border-right: 2px solid var(--accent-color);
-            transform: rotate(45deg);
-            align-self: flex-end;
-        }
-
-        /* --- 4. WHO SECTION (About) --- */
-        .who-section {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .who-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .who-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            line-height: 1.3;
-        }
-
-        .who-content p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .skills-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .skills-row img {
-            height: 35px;
-            width: auto;
-            opacity: 0.6;
-            filter: grayscale(100%);
-            transition: var(--transition);
-        }
-
-        .skills-row img:hover {
-            opacity: 1;
-            filter: grayscale(0);
-            transform: scale(1.1);
-        }
-
-        /* --- 5. VALUES SECTION --- */
-        .values-section {
-            background-color: var(--bg-light);
-            text-align: center;
-        }
-
-        .values-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .values-title {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            text-align: left;
-        }
-
-        .value-card .icon img {
-            height: 48px;
-            margin-bottom: 1.5rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .value-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        .btn-learn-more {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .btn-learn-more:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        /* --- 6. RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .intro-grid, .who-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .intro-image {
-                order: -1; /* Moves image to top on mobile */
-                max-width: 80%;
-                margin: 0 auto;
-            }
-
-            .intro-name {
-                font-size: 2.5rem;
-            }
-            
-            section {
-                padding: 3rem 1rem;
-            }
-        }
-    </style>
+    @media (max-width: 640px) {
+      section { padding: 3.75rem 1.1rem; }
+      .blog-card { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#home">ROBERT NGUYEN</a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home">Home</a>
+        <a href="experience/">Experience</a>
+        <a href="projects/">Projects</a>
+        <a href="blogs/">Blogs</a>
+        <a class="btn-primary" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="intro-section" id="home">
-      <div class="intro-grid">
+      <div class="shell intro-grid">
         <div class="intro-content">
-          <p class="intro-welcome">Welcome, nice to meet you!</p>
-          <h1 class="intro-name">MY NAME IS<br>ROBERT NGUYEN</h1>
+          <div class="intro-welcome pill">Welcome, nice to meet you!</div>
+          <h1 class="intro-name">My name is<br>Robert Nguyen</h1>
           <ul class="intro-bullets">
             <li>I bring experience across business, analytics, and strategy.</li>
             <li>I collaborate well across teams, functions, and cultures.</li>
             <li>I use data and context to guide confident, thoughtful decisions.</li>
           </ul>
+          <div class="intro-actions">
+            <a class="btn-primary" href="projects/">View projects</a>
+            <a class="btn-secondary" href="#contact">Contact me</a>
+          </div>
+          <div class="intro-meta">
+            <span class="chip">Analytics · Strategy · Operations</span>
+            <span class="chip">Los Angeles, CA</span>
+            <span class="chip">Open to collaborations</span>
+          </div>
         </div>
         <div class="intro-image">
-          <img src="https://placehold.co/500x600/e2e8f0/1e293b?text=Robert+Photo" alt="Robert Nguyen">
-          <p class="intro-quote">"Every accomplishment starts with the decision to try"</p>
+          <img src="Images/Personal_1.JPG" alt="Robert Nguyen">
+          <p class="intro-quote">Every accomplishment starts with the decision to try.</p>
         </div>
       </div>
     </section>
 
     <section class="cards-section">
       <div class="cards-grid">
-        
-        <a href="https://Robertn02.github.io/website/experience/" class="card card-story">
-          <h2>MY EXPERIENCE</h2>
+        <a href="experience/" class="card">
+          <h2>My Experience</h2>
           <p>A look at the path that shaped how I think and work across business and analytics. Explore key roles, lessons, and moments.</p>
-          <div class="arrow"></div>
+          <span class="arrow" aria-hidden="true"></span>
         </a>
-    
-        <a href="https://Robertn02.github.io/website/projects/" class="card card-experience">
-          <h2>MY PROJECTS</h2>
+        <a href="projects/" class="card">
+          <h2>My Projects</h2>
           <p>Practical work applying analytics to real questions and decisions. Click through to see how I break problems down.</p>
-          <div class="arrow"></div>
+          <span class="arrow" aria-hidden="true"></span>
         </a>
-    
-        <a href="https://Robertn02.github.io/website/blogs" class="card card-work">
-          <h2>MY INSIGHTS</h2>
+        <a href="blogs/" class="card">
+          <h2>My Insights</h2>
           <p>Explorations on business, industries, and strategy. Exploring ideas and patterns that shape how companies compete.</p>
-          <div class="arrow"></div>
+          <span class="arrow" aria-hidden="true"></span>
         </a>
-    
       </div>
     </section>
 
     <section class="who-section">
-      <div class="who-grid">
-        <div class="who-image">
-             <img src="https://placehold.co/400x500/e2e8f0/1e293b?text=Profile+2" alt="Robert Nguyen">
+      <div class="shell who-grid">
+        <div class="who-image who-card">
+          <img src="Images/Personal_2.JPG" alt="Robert Nguyen">
         </div>
-        <div class="who-content">
-          <span class="section-label">WHO AM I</span>
-          <h2 class="who-title">PROBLEM SOLVER WITH A BACKGROUND IN ANALYTICS, FINANCE, AND TECHNOLOGY</h2>
-          <p>I’m interested in how businesses run and how data can help teams make clear decisions. With a background in finance and data analytics, I focus on understanding problems, bringing structure, and working with others to move ideas into action.</p>
-          <p>In recent years, I’ve built experience in consulting, research, and business settings, including work in aviation, operations, and technology.</p>
-          
-    
+        <div class="who-card who-content">
+          <span class="section-label">Who am I</span>
+          <h2 class="who-title">Problem solver with background in analytics, finance, and technology</h2>
+          <p>I'm interested in how businesses run and how data can help teams make clear decisions. With a background in finance and data analytics, I focus on understanding problems, bringing structure, and working with others to move ideas into action.</p>
+          <p>In recent years, I've built experience in consulting, research, and business settings, including work in aviation, operations, and technology. These roles strengthened how I collaborate across functions, adapt to different challenges, and communicate simply and clearly.</p>
+          <p>My goal is to connect business context with data and contribute to steady, consistent progress. Clear thinking, collaboration, and practical problem-solving guide how I work.</p>
+          <div class="intro-meta">
+            <span class="chip">Consulting &amp; research</span>
+            <span class="chip">Aviation · Retail · Finance · Tech</span>
+          </div>
           <div class="skills-row">
-            <img src="Images/Logos/Excel.png" alt="Excel" onerror="this.style.display='none';">
-            <img src="Images/Logos/SQL.png" alt="SQL" onerror="this.style.display='none';">
-            <img src="Images/Logos/Python.png" alt="Python" onerror="this.style.display='none';">
-            <img src="Images/Logos/Tableau.png" alt="Tableau" onerror="this.style.display='none';">
-            <span style="font-weight:bold; color:#cbd5e1;">EXCEL / SQL / PYTHON / TABLEAU / SAP / POWER BI</span>
+            <img src="Images/Logos/Excel.png" alt="Excel">
+            <img src="Images/Logos/PowerPoint.png" alt="PowerPoint">
+            <img src="Images/Logos/SQL.png" alt="SQL">
+            <img src="Images/Logos/Python.png" alt="Python">
+            <img src="Images/Logos/Tableau.png" alt="Tableau">
+            <img src="Images/Logos/Power BI.png" alt="Power BI">
+            <img src="Images/Logos/SAP.png" alt="SAP">
           </div>
         </div>
       </div>
     </section>
 
     <section class="values-section">
-      <div class="values-container">
-        <span class="section-label">WHAT DRIVES ME</span>
-        <h2 class="values-title">VALUES I CARRY INTO BUSINESS</h2>
-    
-        <div class="values-grid">
-          <div class="value-card value-collab">
-            <div class="icon"><img src="https://placehold.co/50x50?text=Icon" alt="Collaboration"></div>
-            <h3>COLLABORATION</h3>
-            <p>“Good work happens when people think together. I listen, ask questions, and align early so everyone moves in the same direction.”</p>
+      <div class="values-head">
+        <span class="section-label">What drives me</span>
+        <h2 class="values-title">Values that I carry into business and analytics</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="icon"><img src="Images/Icons/diversity.png" alt="Collaboration icon"></div>
+          <h3>Collaboration</h3>
+          <p>Good work happens when people think together. I listen, ask questions, and align early so everyone moves in the same direction.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon"><img src="Images/Icons/verified.png" alt="Reliability icon"></div>
+          <h3>Reliability</h3>
+          <p>Projects move best with steady effort and organization. I track priorities, stay calm under pressure, and follow through.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon"><img src="Images/Icons/bulb.png" alt="Initiative icon"></div>
+          <h3>Initiative</h3>
+          <p>When direction is unclear, I explore, surface questions, and suggest paths so the team can move faster and decide with confidence.</p>
+        </div>
+      </div>
+      <div class="values-head">
+        <a href="experience/" class="btn-ghost">Learn more about my journey</a>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+      <div class="projects-head">
+        <span class="section-label">What I've accomplished</span>
+        <h2 class="projects-title">Projects and presentations built individually and together</h2>
+      </div>
+      <div class="projects-grid">
+        <a href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis" class="project-card" aria-label="Finance project">
+          <div class="project-media"><img src="Images/Projects/SPY.jpg" alt="Finance &amp; investing"></div>
+          <div class="project-body">
+            <div class="project-meta">Finance &amp; Investing</div>
+            <h3 class="project-title">Fundamental Indexation and Smart Beta Performance Analysis</h3>
+            <p class="project-desc">Investigates how fundamental metrics influence portfolio performance relative to market capitalization weighting.</p>
+            <div class="project-tags">
+              <span class="project-tag">CAPM</span>
+              <span class="project-tag">FF3</span>
+              <span class="project-tag">Time Series</span>
+            </div>
           </div>
-    
-          <div class="value-card value-resilience">
-            <div class="icon"><img src="https://placehold.co/50x50?text=Icon" alt="Reliability"></div>
-            <h3>RELIABILITY</h3>
-            <p>“Projects move best with steady effort. I track priorities, stay calm under pressure, and follow through.”</p>
+        </a>
+        <a href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX" class="project-card" aria-label="Aviation project">
+          <div class="project-media"><img src="Images/Projects/LAX.jpg" alt="Aviation delay prediction"></div>
+          <div class="project-body">
+            <div class="project-meta">Aviation &amp; Mobility</div>
+            <h3 class="project-title">Flight Delay Prediction and Airport Optimization at LAX</h3>
+            <p class="project-desc">Analysis to inform strategies for optimizing airport operations and improving punctuality.</p>
+            <div class="project-tags">
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Machine Learning</span>
+            </div>
           </div>
-    
-          <div class="value-card value-courage">
-            <div class="icon"><img src="https://placehold.co/50x50?text=Icon" alt="Initiative"></div>
-            <h3>INITIATIVE</h3>
-            <p>“When direction is unclear, I take steps to explore. Speaking up and sharing ideas early helps the team move faster.”</p>
+        </a>
+        <a href="https://github.com/Robertn02/Walmart-Retail-Performance-Analytics-Sales-Drivers-and-Holiday-Effects" class="project-card" aria-label="Retail project">
+          <div class="project-media"><img src="Images/Projects/Walmart.jpg" alt="Walmart analytics"></div>
+          <div class="project-body">
+            <div class="project-meta">Retail &amp; Consumer</div>
+            <h3 class="project-title">Walmart Retail Performance Analytics</h3>
+            <p class="project-desc">Store-level analysis of retail performance focusing on sales drivers, holiday impact, productivity, and segmentation.</p>
+            <div class="project-tags">
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Regression</span>
+              <span class="project-tag">K-Means</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="projects-footer">
+        <a href="projects/" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Explore more projects</a>
+        <p style="margin-top:1rem;">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
+        <div class="project-slider">
+          <div class="slider-track">
+            <img src="Images/Slider/USC_1.JPG" alt="USC 1">
+            <img src="Images/Slider/USC_2.jpg" alt="USC 2">
+            <img src="Images/Slider/EYP_1.JPG" alt="EYP 1">
+            <img src="Images/Slider/USC_3.jpg" alt="USC 3">
+            <img src="Images/Slider/USC_4.JPG" alt="USC 4">
+            <img src="Images/Slider/EYP_2.JPG" alt="EYP 2">
+            <img src="Images/Slider/Champion.jpg" alt="USC Champion">
           </div>
         </div>
-    
-        <div class="values-button">
-          <a href="https://Robertn02.github.io/website/experience/" class="btn-learn-more">LEARN MORE ABOUT MY JOURNEY</a>
+      </div>
+    </section>
+
+    <section class="insights-section" id="insights">
+      <div class="insights-head">
+        <span class="section-label" style="color:#93c5fd;">What I'm exploring</span>
+        <h2 class="insights-title">Breaking down businesses, industries, and decisions</h2>
+      </div>
+      <div class="insights-grid">
+        <a class="blog-card" href="https://medium.com/@Robertn02/aviation-demand-forecasting-in-an-uncertain-travel-market-123" target="_blank" rel="noopener">
+          <div class="blog-media"><img src="Images/Projects/AA.jpg" alt="Airport analytics"></div>
+          <div class="blog-body">
+            <span class="blog-tag">Aviation</span>
+            <h3 class="blog-title">Aviation Demand Forecasting in an Uncertain Travel Market</h3>
+            <p class="blog-desc">Scenario modeling for network planners when leisure rebounds faster than corporate travel.</p>
+            <div class="blog-meta">
+              <span>Apr 12, 2025</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </a>
+        <a class="blog-card" href="https://medium.com/@Robertn02/semiconductor-yield-levers-operations-analytics-456" target="_blank" rel="noopener">
+          <div class="blog-media"><img src="Images/Projects/Semiconductor.jpg" alt="Semiconductor analytics"></div>
+          <div class="blog-body">
+            <span class="blog-tag">Semiconductors</span>
+            <h3 class="blog-title">Five Operations Levers to Lift Fab Yield with Analytics</h3>
+            <p class="blog-desc">Instrumenting process data, anomaly detection, and constraint mapping for faster cycle times.</p>
+            <div class="blog-meta">
+              <span>Mar 28, 2025</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </a>
+        <a class="blog-card" href="https://medium.com/@Robertn02/frequency-over-fees-insights-from-consumer-banking-data-789" target="_blank" rel="noopener">
+          <div class="blog-media"><img src="Images/Projects/Robinhood.jpg" alt="Finance dashboard"></div>
+          <div class="blog-body">
+            <span class="blog-tag">Finance</span>
+            <h3 class="blog-title">Frequency over Fees: Signals from Consumer Banking Data</h3>
+            <p class="blog-desc">Why transaction cadence predicts retention better than fee sensitivity in digital banking.</p>
+            <div class="blog-meta">
+              <span>Feb 15, 2025</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="insights-footer">
+        <a class="view-all" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">View all insights</a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-card">
+        <div class="contact-info">
+          <span class="section-label" style="color:#93c5fd;">Contact</span>
+          <h2 class="contact-title">Get in touch</h2>
+          <p class="contact-subtitle">Whether you have a project in mind or just want to chat about technology, I'd love to hear from you!</p>
+          <ul>
+            <li><img src="Images/Icons/location_on.png" alt="Location">Los Angeles, CA, United States</li>
+            <li><img src="Images/Icons/call.png" alt="Phone">+1 (213) 272-2966</li>
+            <li><img src="Images/Icons/mail.png" alt="Email">Phucn@marshall.usc.edu</li>
+            <li class="contact-links">
+              <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn"></a>
+              <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/GitHub.png" alt="GitHub"></a>
+              <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/Medium.png" alt="Medium"></a>
+            </li>
+          </ul>
         </div>
+        <form id="contactForm" class="contact-form" action="#" method="POST">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" name="subject" placeholder="Subject">
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Message" required></textarea>
+          </div>
+          <input type="hidden" name="source" value="Home">
+          <button type="submit" class="btn-primary contact-submit">Submit now</button>
+          <div id="thankYouMessage" class="thank-you">Thanks for reaching out! I'll be in touch soon.</div>
+        </form>
       </div>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">ROBERT NGUYEN</div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="experience/">Experience</a></li>
+          <li><a href="projects/">Projects</a></li>
+          <li><a href="blogs/">Blogs</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="tel:+12132722966">213-272-2966</a></li>
+          <li><a href="mailto:Phucn@marshall.usc.edu">Phucn@marshall.usc.edu</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (toggleBtn && navMenu) {
+      toggleBtn.addEventListener('click', () => {
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('show');
+        toggleBtn.textContent = navMenu.classList.contains('show') ? 'Close' : 'Menu';
+      });
+    }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliderTrack = document.querySelector('.slider-track');
+      if (sliderTrack && !sliderTrack.dataset.looped) {
+        sliderTrack.dataset.looped = 'true';
+        sliderTrack.innerHTML += sliderTrack.innerHTML;
+      }
+    });
+  </script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6dTnsOkly42s5ulUaM93uMCB_9UTckrBbT0KCVS-44XFllEsEbmcS3huk0SaB7TafGg/exec';
+    const form = document.getElementById('contactForm');
+    const thankYou = document.getElementById('thankYouMessage');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('.contact-submit');
+        const fields = form.querySelectorAll('input:not([type="hidden"]), textarea, button');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        fields.forEach(el => el.disabled = true);
+
+        try {
+          const resp = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+          let ok = false;
+          try { ok = !!(await resp.json()).ok; } catch { ok = resp.ok; }
+
+          if (ok) {
+            form.reset();
+            fields.forEach(el => el.style.display = 'none');
+            thankYou.style.display = 'block';
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch (err) {
+          alert('Sorry, something went wrong. Please try again.');
+          fields.forEach(el => el.disabled = false);
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
 </body>
 </html>
