@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Robert Nguyen | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robert Nguyen | Strategy, product and analytics</title>
+  <meta name="description" content="Robert Nguyen: strategy, product and business analytics. EY-Parthenon, corporate finance, and an MS in Business Analytics at USC Marshall. Selected projects, experience and contact.">
+  <link rel="canonical" href="https://robertn02.github.io/website/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Robert Nguyen | Strategy, product and analytics">
+  <meta property="og:description" content="I turn business questions into clear, data-backed decisions.">
+  <meta property="og:url" content="https://robertn02.github.io/website/">
+  <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1424" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Geist:wght@400..700&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="preload" as="image" href="assets/img/robert-headshot.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Robert Nguyen",
+    "url": "https://robertn02.github.io/website/",
+    "image": "https://robertn02.github.io/website/assets/img/robert-og.jpg",
+    "email": "mailto:phucn@marshall.usc.edu",
+    "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "USC Marshall School of Business" },
+      { "@type": "CollegeOrUniversity", "name": "National Economics University" }
+    ],
+    "knowsAbout": ["Strategy consulting", "Product management", "Business analytics", "Revenue management", "Financial analysis"],
+    "sameAs": ["https://www.linkedin.com/in/phucnh2402/", "https://github.com/Robertn02"]
+  }
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
@@ -13,1587 +49,440 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-C8GLRVX10Y');
-  </script> 
-  
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    :root {
-      --01: #f2f2f2;
-      --02: #eae4d5;
-      --03: #b6b09f;
-      --04: #0f172a;
-      --05: #ffffff;
-      --06: #117a65;
-      --07: #ea580c;
-      --08: #757575;
-
-      --font-playfair: 'Playfair Display', serif;
-      --font-poppins: 'Poppins', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-poppins);
-      background-color: var(--04);
-      color: var(--01);
-    }
-
-    header.site-header {
-      background-color: var(--04);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--03);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      width: 100%;
-      padding: 0 2rem;
-      position: relative;
-    }
-    
-    .logo, .footer-brand h2 {
-      font-family: var(--font-playfair);
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--02);
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 2.25rem;
-    }
-
-    .nav-menu a {
-      color: var(--02);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
-    }
-
-    .nav-menu a:hover {
-      transform: scale(1.05);
-      text-shadow: 0 0 6px var(--02);
-    }
-
-    .btn-contact {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn-contact:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
-    }
-
-    main {
-      padding-top: 100px;
-    }
-    
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      color: var(--05);
-      background: none;
-      border: none;
-      z-index: 1001;
-    }
-
-    .intro-section {
-      background-color: var(--04);
-      padding: 3rem 0;
-    }
-
-    .intro-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      padding: 0 2rem;
-      margin: 0 auto;
-      gap: 2rem;
-      flex-wrap: wrap;
-      box-sizing: border-box; 
-    }
-
-    .intro-content {
-      flex: 1 1 600px;
-    }
-
-    .intro-welcome {
-      font-family: var(--font-playfair);
-      font-style: italic;
-      font-size: 1.5rem;
-      color: var(--02);
-    }
-
-    .intro-name {
-      font-family: var(--font-poppins);
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--05);
-      margin-bottom: 2rem;
-      line-height: 1.4;
-    }
-
-    .intro-bullets {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .intro-bullets li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      color: var(--01);
-      line-height: 1.6
-    }
-
-    .intro-bullets li::before {
-      content: "";
-      background-image: url("Images/Icons/Bullet point.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 18px;
-      height: 18px;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .intro-image {
-      flex: 1 1 300px;
-      text-align: center;
-    }
-
-    .intro-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      background-color: transparent;
-    }
-
-    .intro-quote {
-      font-family: var(--font-playfair);
-      font-style: italic;
-      font-size: 1.25rem;
-      color: var(--02);
-      margin-top: 1.25rem;
-    }
-
-    .cards-section {
-      background-color: var(--04);
-      padding: 6rem 2rem;
-    }
-    
-    .cards-grid, .values-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; 
-      align-items: flex-start; 
-      height: 100%; 
-      padding: 2rem;
-      border-radius: 10px;
-      position: relative;
-      transition: transform 0.3s ease;
-      text-decoration: none; 
-      width: 100%;   
-      box-sizing: border-box;
-    }
-
-    .card h2, .value-card h3, .project-title {
-      font-family: var(--font-poppins);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--04);
-    }
-    
-    .card p, .value-card p {
-      font-family: var(--font-poppins);
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--04);
-      text-align: justify;
-      margin-top: 0.25rem;
-    }
-
-    .card .arrow {
-      width: 28px;
-      height: 28px;
-      background-image: url("Images/Icons/Arrow.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left center;
-      margin-top: 0.5rem;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .card-story {
-      background-color: var(--02);
-    }
-    
-    .card-experience {
-      background-color: var(--05);
-    }
-    
-    .card-work {
-      background-color: var(--03);
-    }
-
-    .who-section, .projects-section {
-      background-color: var(--05);
-      padding: 6rem 2rem;
-    }
-    
-    .who-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      max-width: 1200px;
-      margin: auto;
-      gap: 5rem;
-    }
-    
-    .who-image img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 10px;
-    }
-
-    .who-label, .values-label, .projects-label {
-      font-family: var(--font-poppins);
-      font-weight: 600;
-      font-size: 1.125rem;
-      color: var(--08);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-   
-    .who-title, .values-title, .projects-title, .contact-title {
-      font-family: var(--font-poppins);
-      font-weight: 900;
-      font-size: 1.75rem;
-      color: var(--06);
-      line-height: 1.4;
-      margin-bottom: 1.45rem;
-    }
-      
-    .who-content {
-      flex: 1 1 300px;
-    }
-
-    .who-content p {
-      font-size: 1rem;
-      color: var(--08);
-      line-height: 1.6;
-      text-align: justify;
-    }
-    
-    .skills-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-      margin-top: 2rem;
-    }
-    
-    .skills-row img {
-      height: 46px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .values-section {
-      background-color: var(--02);
-      padding: 6rem 2rem;
-    }
-    
-    .values-container, .projects-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .values-title, .projects-title {
-      margin-bottom: 2.125rem;
-    }
-    
-    .values-grid, .projects-grid {
-      margin-bottom: 3.5rem;
-    }
-    
-    .value-card {
-      padding: 2rem;
-      border-radius: 10px;
-      background-color: var(--03);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; 
-      align-items: flex-start; 
-      height: 100%; 
-    }
-
-    .icon img {
-      width: 30px;
-      height: auto;
-    }
-    
-    .value-card h3, .value-card p {
-      color: var(--05)
-    }
-    
-    .value-resilience {
-      background-color: var(--04);
-    }
-
-    .value-courage {
-      background-color: var(--08);
-    }
-    
-    .values-button, .projects-button {
-      text-align: center;
-    }
-    
-    .btn-learn-more, .btn-explore-more, .contact-submit {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
-      font-weight: 600;
-      font-size: 1.125rem;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
-    
-    .btn-learn-more:hover, .btn-explore-more:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
-    }
-
-    .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      align-items: stretch;
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--05);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.16);
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(17, 122, 101, 0.4);
-      box-shadow: 0 26px 52px rgba(15, 23, 42, 0.2);
-    }
-
-    .project-card:focus-visible {
-      outline: 3px solid var(--07);
-      outline-offset: 4px;
-    }
-
-    .project-media {
-      position: relative;
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      background: rgba(15, 23, 42, 0.85);
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.35s ease;
-    }
-
-    .project-card:hover .project-media img,
-    .project-card:focus-visible .project-media img {
-      transform: scale(1.05);
-    }
-
-    .project-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1.5rem 1.75rem 1.75rem;
-      background: var(--05);
-    }
-
-    .project-meta {
-      font-family: var(--font-poppins);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      color: #6b7076;
-      text-transform: uppercase;
-    }
-
-    .project-title {
-      margin: 0;
-      font-family: var(--font-poppins);
-      font-size: 1.14rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: var(--04);
-      line-height: 1.55;
-    }
-
-    .project-desc {
-      margin: 0;
-      font-size: 0.92rem;
-      font-weight: 400;
-      color: rgba(15, 23, 42, 0.65);
-      line-height: 1.8;
-      letter-spacing: 0.01em;
-    }
-
-    .project-tags {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .project-tag {
-      font-family: var(--font-poppins);
-      font-size: 0.78rem;
-      font-weight: 500;
-      padding: 0.32rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(17, 122, 101, 0.1);
-      color: var(--06);
-      white-space: nowrap;
-    }
-
-    @media (max-width: 768px) {
-      .projects-grid {
-        gap: 1.75rem;
-      }
-
-      .project-card {
-        border-radius: 14px;
-      }
-
-      .project-body {
-        padding: 1.25rem 1.5rem 1.5rem;
-      }
-
-      .project-title {
-        font-size: 1.1rem;
-      }
-
-      .project-desc {
-        font-size: 0.9rem;
-      }
-    }
-
-    .projects-footer {
-      font-family: var(--font-playfair);
-      font-style: italic;
-      color: var(--06);
-      text-align: center;
-      margin-top: 5rem;
-      font-size: 1.25rem;
-    }
-    
-    .project-slider {
-      margin-top: 2.375rem;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .slider-track {
-      display: flex;
-      gap: 2rem;
-      width: max-content;
-      will-change: transform;
-      animation: slide 25s linear infinite;
-      backface-visibility: hidden;
-      transform: translateZ(0);
-    }
-    
-    .slider-track img {
-      height: 200px;
-      width: auto;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-    
-    @keyframes slide {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .insights-section {
-      background-color: var(--02);
-      padding: 6rem 2rem;
-    }
-
-    .insights-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .insights-header {
-      text-align: left;
-      max-width: 960px;
-      margin: 0 0 2.5rem;
-    }
-
-    .insights-label {
-      font-family: var(--font-poppins);
-      font-weight: 600;
-      font-size: 1.125rem;
-      color: var(--08);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .insights-title {
-      margin: 0 0 1.45rem;
-      font-family: var(--font-poppins);
-      font-weight: 900;
-      font-size: 1.75rem;
-      color: var(--06);
-      line-height: 1.4;
-    }
-
-    .insights-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2.2rem;
-    }
-
-    .blog-card {
-      display: grid;
-      grid-template-columns: minmax(0, 220px) 1fr;
-      gap: 2rem;
-      text-decoration: none;
-      color: inherit;
-      background: transparent;
-    }
-
-    .blog-card:hover .blog-title {
-      color: #0f172a;
-    }
-
-    .blog-media {
-      aspect-ratio: 4 / 3;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .blog-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .blog-body {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      padding: 0;
-    }
-
-    .blog-tag {
-      font-family: var(--font-poppins);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #6b7076;
-    }
-
-    .blog-title {
-      margin: 0;
-      font-family: var(--font-playfair);
-      font-size: 1.52rem;
-      font-weight: 700;
-      color: #1f252b;
-      line-height: 1.45;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 6px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    }
-
-    .blog-card:hover .blog-title,
-    .blog-card:focus-visible .blog-title {
-      color: #0f172a;
-      text-decoration-color: rgba(15, 23, 42, 0.5);
-    }
-
-    .blog-desc {
-      margin: 0;
-      font-size: 0.93rem;
-      line-height: 1.55;
-      color: #4d5054;
-    }
-
-    .blog-meta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: rgba(31, 37, 43, 0.55);
-    }
-
-    .blog-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .blog-read::before {
-      content: "⏱";
-      font-size: 0.9rem;
-    }
-
-    .insights-footer {
-      margin-top: 2.75rem;
-      text-align: center;
-    }
-
-    .insights-view-all {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--06);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-
-    .insights-view-all:hover {
-      color: var(--07);
-    }
-
-
-    .contact-section {
-      background-color: var(--01);
-      padding: 6rem 2rem;
-      text-align: left;
-    }
-
-    .contact-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      padding: 2.75rem;
-      background: var(--04);
-      border-radius: 24px;
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
-      box-sizing: border-box;
-    }
-
-    .contact-form-wrapper {
-      width: 100%;
-      display: flex;
-      align-items: center;
-    }
-
-    .contact-form {
-      width: 100%;
-      background: var(--05);
-      padding: 2rem;
-      border-radius: 16px;
-      color: var(--04);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .contact-info ul {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0 0;
-    }
-
-    .contact-info ul li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-      line-height: 1.4;
-      color: var(--01);
-    }
-
-    .contact-info ul li:last-child {
-      margin-bottom: 0;
-      gap: 1rem;
-    }
-
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--07);
-      padding: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .contact-info ul li.contact-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 0.75rem;
-    }
-
-    .contact-info ul li.contact-links a:last-child {
-      margin-right: 0;
-    }
-
-    .contact-info ul li.contact-links img.footer-icon {
-      margin: 0;
-    }
-
-    @media (min-width: 768px) {
-      .contact-info, .contact-form-wrapper {
-        max-width: 80%;
-        margin: 0 auto;
-      }
-    }
-
-    .contact-title {
-      color: var(--02);
-      font-size: 2.5rem;
-      margin: 0.75rem 0 1rem;
-    }
-
-    .contact-label {
-      display: inline-block;
-      color: var(--07);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-    }
-
-    .contact-subtitle {
-      font-family: var(--font-poppins);
-      font-size: 1rem;
-      color: var(--01);
-      margin-bottom: 1.25rem;
-    }
-
-    .contact-form-title {
-      margin: 0 0 1rem 0;
-      font-size: 1.25rem;
-      color: var(--04);
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      font-family: var(--font-poppins);
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 8px;
-      background-color: var(--01);
-      color: var(--04);
-    }
-
-    .contact-form textarea {
-      resize: vertical;
-    }
-    
-    .contact-submit {
-      background: var(--07);
-      color: var(--05);
-      padding: 0.75rem 1.25rem;
-      border-radius: 6px;
-      border: none;
-      font-weight: 700;
-      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
-      will-change: transform, box-shadow;
-    }
-
-    .contact-submit:hover {
-      background: var(--06);         
-      transform: translateY(-1px) scale(1.03);
-      box-shadow: 0 8px 20px rgba(0,0,0,.18);
-    }
-
-    .contact-submit:active {
-      transform: translateY(0) scale(0.98); 
-      box-shadow: 0 2px 8px rgba(0,0,0,.12);
-    }
-
-    .contact-submit.is-busy,
-    .contact-submit:disabled {
-      opacity: 0.9;
-      cursor: progress;
-      transform: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,.12);
-    }
-
-    .contact-submit.is-busy {
-      position: relative;
-      color: transparent; 
-    }
-    .contact-submit.is-busy::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2.5px solid rgba(255,255,255,0.55);
-      border-top-color: rgba(255,255,255,1);
-      animation: spin 0.8s linear infinite;
-    }
-
-    .thank-you {
-      display: none;
-      margin-top: 0.85rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--07);
-      font-family: var(--font-poppins);
-    }
-
-    @media (max-width: 768px) {
-      .contact-section {
-        padding: 4.5rem 1.5rem;
-      }
-
-      .contact-container {
-        padding: 0;
-      }
-
-      .contact-grid {
-        padding: 1.75rem;
-        border-radius: 20px;
-        gap: 2rem;
-      }
-
-      .contact-form {
-        padding: 1.5rem;
-      }
-
-      .contact-title {
-        font-size: 2rem;
-      }
-
-      .contact-icon {
-        width: 36px;
-        height: 36px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .contact-section {
-        padding: 4rem 1rem;
-      }
-
-      .contact-grid {
-        padding: 1.25rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        font-size: 0.95rem;
-        padding: 0.65rem 0.85rem;
-      }
-
-      .contact-form-title {
-        font-size: 1.1rem;
-      }
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    
-    .site-footer {
-      background-color: var(--04);
-      color: var(--02);
-      padding: 4rem 2rem 5rem;
-    }
-    
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 2rem;
-      gap: 5rem;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    
-    .footer-brand h2,
-    .footer-contact h3,
-    .footer-nav h3 {
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    .footer-contact h3,
-    .footer-nav h3 {
-      color: var(--02);
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-contact ul,
-    .footer-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .footer-contact li,
-    .footer-nav li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--02);
-      margin-bottom: 0.5rem;
-    }
-    
-    .footer-contact a,
-    .footer-nav a {
-      color: var(--02);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-contact a:hover,
-    .footer-nav a:hover {
-      color: var(--05);
-    }
-
-    .footer-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 1rem;
-      vertical-align: middle;
-    }
-    
-/* Responsive for mobile */
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-      }
-
-      .logo, .footer-brand h2 {
-        font-size: 28px;
-        margin-bottom: 0.5rem;
-      }
-
-      .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
-      }
-
-      .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        width: 100%;
-        background-color: var(--04);
-        padding: 0;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.show {
-        max-height: 500px;
-        padding: 1rem 0;
-        opacity: 1;
-      }
-
-      .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 0;
-      }
-
-      .insights-section { padding: 5rem 1.5rem; }
-      .insights-title { font-size: 1.6rem; }
-      .insights-grid { gap: 1.75rem; }
-      .blog-card { grid-template-columns: 1fr; gap: 1.1rem; }
-      .blog-media { aspect-ratio: 5 / 3; }
-      .blog-body { gap: 0.35rem; }
-      .blog-title { font-size: 1.4rem; }
-      .values-button { display: flex; justify-content: center; }
-      .values-button .btn-learn-more {
-        width: 100%;
-        max-width: 320px;
-        font-size: 1rem;
-        padding: 0.85rem 1rem;
-        display: inline-flex;
-        justify-content: center;
-      }
-
-      .intro-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .intro-content, .intro-image {
-        flex: 1 1 100%;
-      }
-
-      .intro-welcome {
-        font-size: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-      
-      .intro-name {
-        font-size: 2.25rem;
-      }
-
-      .intro-bullets {
-        padding-left: 1.5rem;
-        text-align: left;
-      }
-
-      .intro-quote, .projects-footer {
-        font-size: 1.125rem;
-      }
-      
-      .card, .value-card {
-        padding: 1.75rem;
-        font-size: 0.875rem;
-      }
-
-      .card h2, .value-card h3 {
-        font-size: 1.25rem;
-      }
-    
-      .card .arrow {
-        width: 22px;
-        height: 22px;
-        align-self: flex-start;
-      }
-      
-      .who-grid {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .who-title {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1.75rem;
-      }
-      
-      .values-title, .projects-title {
-        font-size: 1.5rem;
-        text-align: center;        
-        margin-bottom: 2.375rem;
-      }
-      
-      .who-content {
-        flex: 1 1 100%;
-      }
-      
-      .values-label, .projects-label {
-        text-align: center;
-        display: block;
-        width: 100%;
-        margin-bottom: 1.25rem;
-      }
-
-      .intro-bullets li, .card p, .who-content p, .value-card p, .project-desc {
-        font-size: 0.875rem;
-      }
-
-      .contact-title {
-        font-size: 1.625rem;
-      }
-      
-      .contact-subtitle, .contact-form input, .contact-form textarea {
-        font-size: 0.95rem;
-      }
-
-      .thank-you {
-        font-size: 1rem;
-      }
-      
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
-        text-align: center;
-      }
-    }
-  </style>
+  </script>
 </head>
-  
+
 <body>
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="logo" href="https://Robertn02.github.io/website/">ROBERT NGUYEN</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16v-4M12 16V8M17 16V5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 7 6 6 4-4 8 8"/><path d="M21 11v6h-6"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5-10-5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M10 17h4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 20a6.5 6.5 0 0 0-2.4-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
+  </svg>
 
-      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="https://Robertn02.github.io/website/">HOME</a>
-        <a href="https://Robertn02.github.io/website/experience/">EXPERIENCE</a>
-        <a href="https://Robertn02.github.io/website/projects/">PROJECTS</a>
-        <a href="https://Robertn02.github.io/website/blogs/">BLOGS</a>
-        <a href="#contact" class="btn-contact">CONTACT ME</a>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./">
+        <img src="assets/img/robert-headshot.webp" width="36" height="36" alt="">
+        <span>Robert Nguyen</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#about">About</a>
       </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary btn-sm" href="assets/Robert-Nguyen-Resume.pdf" data-resume hidden>Résumé</a>
+        <a class="btn btn-primary btn-sm" href="#contact">Contact</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg class="icon menu-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon menu-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="intro-section" id="home">
-      <div class="intro-grid">
-        <div class="intro-content">
-          <p class="intro-welcome">Welcome, nice to meet you!</p>
-          <h1 class="intro-name">MY NAME IS<br>ROBERT NGUYEN</h1>
-          <ul class="intro-bullets">
-            <li>I bring experience across business, analytics, and strategy.</li>
-            <li>I collaborate well across teams, functions, and cultures.</li>
-            <li>I use data and context to guide confident, thoughtful decisions.</li>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="status"><span class="status-dot" aria-hidden="true"></span>Open to strategy, product and analytics roles</span>
+          <p class="hero-hello">Hi, I’m Robert Nguyen</p>
+          <h1>I turn business questions into clear, <span class="nowrap">data-backed</span> decisions.</h1>
+          <p class="hero-sub">Business analyst with a background in strategy consulting, corporate finance and product. MS in Business Analytics at USC Marshall.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">View my work <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="#contact">Get in touch</a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+            <a class="icon-btn" href="https://github.com/Robertn02" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg></a>
+          </div>
+
+          <ul class="creds" aria-label="Background">
+            <li class="cred">
+              <span class="logo-box"><img src="assets/img/logos/ey-mark.webp" alt="" width="128" height="128"></span>
+              <div><strong>EY-Parthenon</strong><span>Strategy and Transactions</span></div>
+            </li>
+            <li class="cred">
+              <span class="logo-box logo-box--usc" aria-hidden="true">USC</span>
+              <div><strong>USC Marshall</strong><span>MS Business Analytics</span></div>
+            </li>
+            <li class="cred">
+              <span class="logo-box logo-box--mono" aria-hidden="true">T</span>
+              <div><strong>Taseco Group</strong><span>Financial Analyst</span></div>
+            </li>
           </ul>
         </div>
-        <div class="intro-image">
-          <img src="Images/Personal_1.JPG" alt="Robert Nguyen">
-          <p class="intro-quote">Every accomplishment starts with the decision to try<br>
-        </div>
-      </div>
-    </section>
 
-    <section class="cards-section">
-      <div class="cards-grid">
-        
-        <a href="https://Robertn02.github.io/website/experience/" class="card card-story">
-          <h2>MY EXPERIENCE</h2>
-          <p>A look at the path that shaped how I think and work across business and analytics. Explore key roles, lessons, and moments that influenced my approach and growth.</p>
-          <div class="arrow"></div>
-        </a>
-    
-        <a href="https://Robertn02.github.io/website/projects/" class="card card-experience">
-          <h2>MY PROJECTS</h2>
-          <p>Practical work applying analytics to real questions and decisions. Click through to see how I break problems down and turn analysis into clear, useful outcomes.</p>
-          <div class="arrow"></div>
-        </a>
-    
-        <a href="https://Robertn02.github.io/website/blogs" class="card card-work">
-          <h2>MY INSIGHTS</h2>
-          <p>Explorations on business, industries, and strategy through an analytical lens. Exploring ideas, patterns, and decisions that shape how companies operate and compete.</p>
-          <div class="arrow"></div>
-        </a>
-    
-      </div>
-    </section>
-
-    <section class="who-section">
-      <div class="who-grid">
-        <div class="who-image">
-          <img src="Images/Personal_2.JPG" alt="Robert Nguyen">
-        </div>
-        <div class="who-content">
-          <div class="who-label">WHO AM I</div>
-          <h2 class="who-title">PROBLEM SOLVER WITH BACKGROUND IN ANALYTICS, FINANCE, AND TECHNOLOGY</h2>
-          <p>I’m interested in how businesses run and how data can help teams make clear decisions. With a background in finance and data analytics, I focus on understanding problems, bringing structure, and working with others to move ideas into action.</p>
-          <p>In recent years, I’ve built experience in consulting, research, and business settings, including work in aviation, operations, and technology. These roles strengthened how I collaborate across functions, adapt to different challenges, and communicate simply and clearly.</p>
-          <p>My goal is to connect business context with data and contribute to steady, consistent progress. Clear thinking, collaboration, and practical problem-solving guide how I work.</p>
-    
-          <div class="skills-row">
-            <img src="Images/Logos/Excel.png" alt="Excel">
-            <img src="Images/Logos/PowerPoint.png" alt="PowerPoint">
-            <img src="Images/Logos/SQL.png" alt="SQL">
-            <img src="Images/Logos/Python.png" alt="Python">
-            <img src="Images/Logos/Tableau.png" alt="Tableau">
-            <img src="Images/Logos/Power BI.png" alt="Power BI">
-            <img src="Images/Logos/SAP.png" alt="SAP">
+        <div class="portrait">
+          <img src="assets/img/robert-headshot.webp" width="960" height="960" alt="Portrait of Robert Nguyen" fetchpriority="high">
+          <div class="float-card float-card--a">
+            <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span>
+            <div><strong>−18.9%</strong><span>airline revenue loss<br>in simulation</span></div>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span>
+            <div><strong>11 projects</strong><span>published on GitHub</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="values-section">
-      <div class="values-container">
-        <div class="values-label">WHAT DRIVES ME</div>
-        <h2 class="values-title">VALUES THAT I CARRY INTO BUSINESS AND ANALYTICS</h2>
-    
-        <div class="values-grid">
-          <div class="value-card value-collab">
-            <div class="icon"><img src="Images/Icons/diversity.png" alt="Collaboration Icon" /></div>
-            <h3>COLLABORATION</h3>
-            <p>“Good work happens when people think together. I listen, ask questions, and align early so everyone move in the same direction. Supporting teammates and building clarity keeps work smooth and avoids confusion.”</p>
-          </div>
-    
-          <div class="value-card value-resilience">
-            <div class="icon"><img src="Images/Icons/verified.png" alt="Resilience Icon" /></div>
-            <h3>RELIABILITY</h3>
-            <p>“Projects move best with steady effort and organization. I track priorities, stay calm under pressure, and follow through. When things change, I adjust quickly and keep work moving without losing quality.”</p>
-          </div>
-    
-          <div class="value-card value-courage">
-            <div class="icon"><img src="Images/Icons/bulb.png" alt="Courage Icon" /></div>
-            <h3>INITIATIVE</h3>
-            <p>“When direction is unclear, I take steps to explore, suggest paths, or surface questions. Speaking up, offering help, and sharing ideas early helps the team move faster and make decisions with confidence.”</p>
+    <!-- Expertise -->
+    <section class="section section--soft" id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="expertise-title">Where I add value</h2>
+            <p>Three kinds of problems I’ve been trusted with. Pick the one you’re hiring for.</p>
           </div>
         </div>
-    
-        <div class="values-button">
-          <a href="https://Robertn02.github.io/website/experience/" class="btn-learn-more">LEARN MORE ABOUT MY JOURNEY</a>
-        </div>
-      </div>
-    </section>
 
-    <section class="projects-section">
-      <div class="projects-container">
-        <div class="projects-label">WHAT I’VE ACCOMPLISHED</div>
-        <h2 class="projects-title">PROJECTS & PRESENTATIONS I’VE BUILT INDIVIDUALLY AND TOGETHER</h2> 
-    
-        <div class="projects-grid">
-          <!-- Example card -->
-        <a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics"
-          class="project-card" aria-label="Finance">
-          <div class="project-media">
-            <img src="Images/Projects/Robinhood.jpg" alt="Robinhood analytics">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">Finance & Investing</div>
-            <h3 class="project-title">Robinhood & CRSP Retail Investor Flow Behavioral Analytics</h3>
-            <p class="project-desc">Explores retail investor behavior through holdings, flow, and behavioral signals to explain market participation trends.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Logistic</span>
-              <span class="project-tag">SHAP</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer"
-          class="project-card" aria-label="Aviation">
-          <div class="project-media">
-            <img src="Images/Projects/AA.jpg" alt="Airline revenue management">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">Aviation & Mobility</div>
-            <h3 class="project-title">Airline Revenue Management IROPS Seat Allocation Optimizer</h3>
-            <p class="project-desc">Built a seat-allocation optimizer for irregular operations that balances revenue outcomes with disruption recovery plans.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Optimization</span>
-              <span class="project-tag">Airline IROPS</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis"
-          class="project-card" aria-label="Aviation">
-          <div class="project-media">
-            <img src="Images/Projects/Rivian.jpg" alt="Rivian EV analytics">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">Aviation & Mobility</div>
-            <h3 class="project-title">EV Smart Charging: Rivian Emissions Optimization and Incentive Analysis</h3>
-            <p class="project-desc">Smart charging and incentive modeling to cut EV emissions while improving adoption economics.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Time Series</span>
-              <span class="project-tag">Machine Learning</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="projects-button">
-        <a href="https://Robertn02.github.io/website/projects/" class="btn-explore-more">EXPLORE MORE PROJECTS</a>
-      </div>
-  
-      <p class="projects-footer">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
-  
-      <div class="project-slider">
-        <div class="slider-track">
-          <img src="Images/Slider/USC_1.JPG" alt="USC_1">
-          <img src="Images/Slider/USC_2.jpg" alt="USC_2">
-          <img src="Images/Slider/EYP_1.JPG" alt="EYP">
-          <img src="Images/Slider/USC_3.jpg" alt="USC_3">            
-          <img src="Images/Slider/USC_4.JPG" alt="USC_4">
-          <img src="Images/Slider/EYP_2.JPG" alt="EYP">
-          <img src="Images/Slider/Champion.jpg" alt="USC Champion">
-        </div>
-      </div>
-    </section>
-    
-    <section class="insights-section">
-      <div class="insights-container">
-        <div class="insights-header">
-          <span class="insights-label">WHAT I’M EXPLORING</span>
-          <h2 class="insights-title">BREAKING DOWN BUSINESSES, INDUSTRIES, AND DECISIONS</h2>
-        </div>
-
-        <div class="insights-grid">
-          <a class="blog-card" href="https://medium.com/@Robertn02/aviation-demand-forecasting-in-an-uncertain-travel-market-123" target="_blank" rel="noopener">
-            <div class="blog-media">
-              <img src="Images/Projects/AA.jpg" alt="Airport transportation analytics dashboard" />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Aviation</span>
-              <h3 class="blog-title">Aviation Demand Forecasting in an Uncertain Travel Market</h3>
-              <p class="blog-desc">Scenario modeling for network planners when leisure rebounds faster than corporate travel.</p>
-              <div class="blog-meta">
-                <span class="blog-date">Apr 12, 2025</span>
-                <span class="blog-read">6 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="blog-card" href="https://medium.com/@Robertn02/semiconductor-yield-levers-operations-analytics-456" target="_blank" rel="noopener">
-            <div class="blog-media">
-              <img src="Images/Projects/Semiconductor.jpg" alt="Semiconductor fab analytics workflow" />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Semiconductors</span>
-              <h3 class="blog-title">Five Operations Levers to Lift Fab Yield with Analytics</h3>
-              <p class="blog-desc">Instrumenting process data, anomaly detection, and constraint mapping for faster cycle times.</p>
-              <div class="blog-meta">
-                <span class="blog-date">Mar 28, 2025</span>
-                <span class="blog-read">7 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="blog-card" href="https://medium.com/@Robertn02/frequency-over-fees-insights-from-consumer-banking-data-789" target="_blank" rel="noopener">
-            <div class="blog-media">
-              <img src="Images/Projects/Robinhood.jpg" alt="Finance dashboard with customer segmentation charts" />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Finance</span>
-              <h3 class="blog-title">Frequency over Fees: Signals from Consumer Banking Data</h3>
-              <p class="blog-desc">Why transaction cadence predicts retention better than fee sensitivity in digital banking.</p>
-              <div class="blog-meta">
-                <span class="blog-date">Feb 15, 2025</span>
-                <span class="blog-read">5 min read</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="insights-footer">
-          <a class="insights-view-all" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">View all insights</a>
-        </div>
-      </div>
-    </section>
-    
-    <section class="contact-section" id="contact">
-      <div class="contact-container">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <span class="contact-label">Contact</span>
-            <h2 class="contact-title">Get in Touch</h2>
-            <p class="contact-subtitle">Whether you have a project in mind or just want to chat about technology, I'd love to hear from you!</p>
-
-            <ul>
-              <li><img src="Images/Icons/location_on.png" alt="Location icon" class="contact-icon"/>Los Angeles, CA, United States</li>
-              <li><img src="Images/Icons/call.png" alt="Phone icon" class="contact-icon"/>+1 (213) 272-2966</li>
-              <li><img src="Images/Icons/mail.png" alt="Email icon" class="contact-icon"/>Phucn@marshall.usc.edu</li>
-              <li class="contact-links">
-                <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn2" class="footer-icon" /></a>
-                <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/GitHub.png" alt="GitHub2" class="footer-icon" /></a>
-                <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/Medium.png" alt="Medium2" class="footer-icon" /></a>
-              </li>
+        <div class="expertise">
+          <article class="x-card">
+            <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
+            <h3>Strategy and consulting</h3>
+            <p>Sizing markets and testing deals until there is a recommendation to stand behind.</p>
+            <ul class="checks">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Due diligence and market sizing at <span class="nowrap">EY-Parthenon</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>DCF and FP&amp;A for deal decisions</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>1st place, NEU Scientific Research 2022</li>
             </ul>
-          </div>
+            <a class="link-arrow" href="projects/?for=strategy">Strategy projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
 
-          <div class="contact-form-wrapper">
-            <form id="contactForm" class="contact-form" action="#" method="POST">
-              <h3 class="contact-form-title">Get in touch</h3>
-              <input type="email" name="email" placeholder="Your Email" required />
-              <input type="text" name="subject" placeholder="Subject" />
-              <textarea name="message" placeholder="Message" rows="5" required></textarea>
-              <input type="hidden" name="source" value="Home">
-              <button type="submit" class="contact-submit">Submit now</button>
-              <div id="thankYouMessage" class="thank-you">Thanks for reaching out! I’ll be in touch soon.</div>
-            </form>
+          <article class="x-card">
+            <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Product and revenue</h3>
+            <p>Pricing and capacity decisions grounded in how customers actually behave.</p>
+            <ul class="checks">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Product manager, revenue optimization</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Demand forecasting and price elasticity</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Optimization models shipped as APIs</li>
+            </ul>
+            <a class="link-arrow" href="projects/?for=product">Product projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="x-card">
+            <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
+            <h3>Business and data analytics</h3>
+            <p>Models and dashboards that make the answer obvious to the people who decide.</p>
+            <ul class="checks">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Python, SQL, Tableau and Power BI</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>LightGBM, XGBoost, regression, clustering</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Executive BI dashboards at Taseco Land</li>
+            </ul>
+            <a class="link-arrow" href="projects/?for=analytics">Analytics projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="work-title">Selected work</h2>
+            <p>Real data, a real business question, and the number that answered it.</p>
+          </div>
+          <a class="link-arrow" href="projects/">All 11 projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card work-card--feature">
+            <div class="work-media">
+              <img src="assets/img/project-aa.webp" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
+            </div>
+            <div class="work-body">
+              <span class="tag">Airline revenue management</span>
+              <h3><a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">Reroute: who gets the last seats when flights fall apart</a></h3>
+              <p>A misconnect-risk model feeds a linear program that reallocates seats during disruptions, packaged as an API.</p>
+              <div class="stats">
+                <div class="stat"><strong>−18.9%</strong><span>expected revenue loss vs. manual</span></div>
+                <div class="stat"><strong>0.92</strong><span>AUC, risk model</span></div>
+                <div class="stat"><strong>7 ms</strong><span>average solve time</span></div>
+              </div>
+              <div class="chips"><span class="chip">Python</span><span class="chip">LightGBM</span><span class="chip">Linear programming</span><span class="chip">FastAPI</span><span class="chip">Docker</span></div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-media">
+              <img src="assets/img/project-rivian.webp" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
+              <span class="metric">476k lbs CO₂ saved a year</span>
+            </div>
+            <div class="work-body">
+              <span class="tag">EV and energy</span>
+              <h3><a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">Rivian smart charging and incentives</a></h3>
+              <p>Shifting charging windows cuts emissions; an incentive projects a 10.7–21.3% sales lift.</p>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-media">
+              <img src="assets/img/project-robinhood.webp" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
+              <span class="metric">ρ &gt; 0.9 across top holdings</span>
+            </div>
+            <div class="work-body">
+              <span class="tag">Capital markets</span>
+              <h3><a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">Robinhood retail investor herding</a></h3>
+              <p>Six stocks dominated retail holdings from 2018 to 2020 and moved almost in lockstep.</p>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-media">
+              <img src="assets/img/project-uber.webp" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
+              <span class="metric">R² 0.76 from time alone</span>
+            </div>
+            <div class="work-body">
+              <span class="tag">Mobility</span>
+              <h3><a href="https://github.com/Robertn02/Uber-NYC-Pickup-Demand-and-Hotspot-Analytics" target="_blank" rel="noopener">NYC Uber demand and hotspots</a></h3>
+              <p>Weekday commuting drives about 75% of pickups, peaking between 4 and 9 pm.</p>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-media">
+              <img src="assets/img/project-spotify.webp" width="467" height="316" loading="lazy" alt="Spotify logo over a person wearing headphones">
+              <span class="metric">1 of 3 drivers mattered</span>
+            </div>
+            <div class="work-body">
+              <span class="tag">Consumer subscriptions</span>
+              <h3><a href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">What makes listeners pay for Premium</a></h3>
+              <p>Podcast variety, not age or device, predicts who is willing to upgrade.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section--soft" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="experience-title">Experience</h2>
+            <p>From corporate finance in Hanoi to strategy and product work in Los Angeles.</p>
+          </div>
+        </div>
+
+        <div class="exp-grid">
+          <ol class="timeline">
+            <li class="t-item">
+              <span class="logo-box logo-box--mono" aria-hidden="true">S</span>
+              <div>
+                <div class="t-head"><h3>Product Manager, Revenue Optimization</h3><span class="t-date">Sep 2025 – Mar 2026</span></div>
+                <p class="t-org">Stealth startup</p>
+                <p>Platform pricing and capacity allocation, driven by demand forecasting and elasticity analysis.</p>
+              </div>
+            </li>
+            <li class="t-item">
+              <span class="logo-box"><img src="assets/img/logos/ey-mark.webp" alt="" width="128" height="128"></span>
+              <div>
+                <div class="t-head"><h3>Strategy and Transactions Consultant</h3><span class="t-date">2024</span></div>
+                <p class="t-org">EY-Parthenon</p>
+                <p>Due diligence and market sizing that steered IPO and M&amp;A engagements in consumer and tech.</p>
+              </div>
+            </li>
+            <li class="t-item">
+              <span class="logo-box logo-box--usc" aria-hidden="true">USC</span>
+              <div>
+                <div class="t-head"><h3>Data Research Analyst</h3><span class="t-date">2024</span></div>
+                <p class="t-org">Marshall Behavioral Research Lab, USC</p>
+                <p>Automated large datasets and applied machine learning to behavioral studies.</p>
+              </div>
+            </li>
+            <li class="t-item">
+              <span class="logo-box logo-box--mono" aria-hidden="true">T</span>
+              <div>
+                <div class="t-head"><h3>Financial Analyst</h3><span class="t-date">2023 – 2024</span></div>
+                <p class="t-org">Taseco Group</p>
+                <p>Bond compliance, FP&amp;A for deals, and DCF forecasting for leadership decisions.</p>
+              </div>
+            </li>
+            <li class="t-item">
+              <span class="logo-box logo-box--mono" aria-hidden="true">T</span>
+              <div>
+                <div class="t-head"><h3>Data Analyst</h3><span class="t-date">2022 – 2023</span></div>
+                <p class="t-org">Taseco Land Investment</p>
+                <p>Industrial-park operations dashboards and BI reporting for executive updates.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="side">
+            <section class="side-card" aria-labelledby="edu-title">
+              <h3 id="edu-title"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>Education</h3>
+              <ul class="side-list">
+                <li><strong>MS in Business Analytics (STEM)</strong><span>USC Marshall School of Business · 2024 – present</span></li>
+                <li><strong>Bachelor of Banking and Finance</strong><span>National Economics University, Hanoi · 2020 – 2024</span></li>
+              </ul>
+            </section>
+            <section class="side-card" aria-labelledby="awards-title">
+              <h3 id="awards-title"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg>Awards</h3>
+              <ul class="side-list">
+                <li><strong>Vietcombank Excellence Award</strong><span>Academic performance and campus impact · 2023</span></li>
+                <li><strong>1st place, NEU Scientific Research</strong><span>National Economics University · 2022</span></li>
+                <li><strong>3rd place, Vietnam Scientific Research</strong><span>National competition · 2022</span></li>
+              </ul>
+            </section>
+            <section class="side-card" aria-labelledby="lead-title">
+              <h3 id="lead-title"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Leadership</h3>
+              <ul class="side-list">
+                <li><strong>Research Executive, Academic Research Club AEP</strong><span>Led research teams and mentored junior members · 2021 – 2022</span></li>
+              </ul>
+            </section>
           </div>
         </div>
       </div>
     </section>
-  </main> 
-  
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>ROBERT NGUYEN</h2>
-      </div>
 
-      <div class="footer-contact">
-        <h3>CONTACT</h3>
-        <ul>
-          <li><a href="tel:+12132722966">213-272-2966</a></li>
-          <li><a href="mailto:Phucn@marshall.usc.edu">Phucn@marshall.usc.edu</a></li>
-          <li>Los Angeles, CA, United States</li>
-          <li>
-            <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
-            <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
-            <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a>
-          </li>
+    <!-- Toolkit -->
+    <section class="section" id="toolkit" aria-labelledby="toolkit-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="toolkit-title">Toolkit</h2>
+            <p>What I reach for, from the first query to the final slide.</p>
+          </div>
+        </div>
+
+        <ul class="tools">
+          <li class="tool"><img src="assets/img/logos/python.webp" alt="" width="121" height="120"><span>Python</span></li>
+          <li class="tool"><img src="assets/img/logos/sql.webp" alt="" width="91" height="120"><span>SQL</span></li>
+          <li class="tool"><img src="assets/img/logos/excel.webp" alt="" width="129" height="120"><span>Excel</span></li>
+          <li class="tool"><img src="assets/img/logos/tableau.webp" alt="" width="122" height="120"><span>Tableau</span></li>
+          <li class="tool"><img src="assets/img/logos/powerbi.webp" alt="" width="90" height="120"><span>Power BI</span></li>
+          <li class="tool"><img src="assets/img/logos/powerpoint.webp" alt="" width="129" height="120"><span>PowerPoint</span></li>
+          <li class="tool"><img src="assets/img/logos/sap.webp" alt="" width="240" height="119"><span>SAP</span></li>
         </ul>
+
+        <div class="methods">
+          <div class="method">
+            <h3>Strategy and finance</h3>
+            <div class="chips"><span class="chip">Due diligence</span><span class="chip">Market sizing</span><span class="chip">DCF</span><span class="chip">FP&amp;A</span><span class="chip">Factor models</span></div>
+          </div>
+          <div class="method">
+            <h3>Modeling</h3>
+            <div class="chips"><span class="chip">Regression</span><span class="chip">LightGBM</span><span class="chip">XGBoost</span><span class="chip">Clustering</span><span class="chip">Time series</span><span class="chip">Optimization</span></div>
+          </div>
+          <div class="method">
+            <h3>Shipping</h3>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Executive decks</span></div>
+          </div>
+        </div>
       </div>
-    
-      <div class="footer-nav">
-        <h3>NAVIGATION</h3>
-        <ul>
-          <li><a href="https://Robertn02.github.io/website/">Home</a></li>
-          <li><a href="https://Robertn02.github.io/website/experience/">Experience</a></li>
-          <li><a href="https://Robertn02.github.io/website/projects/">Projects</a></li>
-          <li><a href="https://Robertn02.github.io/website/blogs/">Blogs</a></li>
-        </ul>
+    </section>
+
+    <!-- About -->
+    <section class="section section--soft" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="collage">
+          <figure><img src="assets/img/robert-brooklyn.webp" width="900" height="1200" loading="lazy" alt="Robert on the Brooklyn Bridge with the Manhattan skyline behind"><figcaption>New York</figcaption></figure>
+          <figure><img src="assets/img/life-ey-2.webp" width="1200" height="800" loading="lazy" alt="Robert with EY-Parthenon colleagues holding a trophy"><figcaption>EY-Parthenon team</figcaption></figure>
+          <figure><img src="assets/img/life-champion.webp" width="1200" height="800" loading="lazy" alt="USC soccer team celebrating with a trophy"><figcaption>USC soccer champions</figcaption></figure>
+        </div>
+
+        <div class="about-copy">
+          <h2 id="about-title">About me</h2>
+          <p>I trained in banking and finance in Hanoi, then kept moving toward the data: BI for a real-estate developer, financial analysis on deals, due diligence at EY-Parthenon, and now analytics at USC Marshall.</p>
+          <p>I start from the decision, structure the problem, then let the data argue. I’d rather hand a team one clear recommendation than ten interesting charts.</p>
+
+          <div class="values">
+            <div class="value">
+              <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <div><strong>Align early</strong><span>Ask the scoping questions up front so everyone solves the same problem.</span></div>
+            </div>
+            <div class="value">
+              <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg></span>
+              <div><strong>Follow through</strong><span>Track priorities, stay calm when plans change, finish what I start.</span></div>
+            </div>
+            <div class="value">
+              <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg></span>
+              <div><strong>Put a first answer on the table</strong><span>When direction is unclear, propose a path the team can react to.</span></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 id="contact-title">Let’s talk.</h2>
+            <p class="cta-sub">Hiring for strategy, product or analytics? Send a note and I’ll get back to you.</p>
+            <ul class="contact-list">
+              <li><a href="mailto:phucn@marshall.usc.edu"><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>phucn@marshall.usc.edu</a></li>
+              <li><a href="tel:+12132722966"><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>+1 (213) 272-2966</a></li>
+              <li><span><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>Los Angeles, California</span></li>
+            </ul>
+            <div class="cta-social">
+              <a class="icon-btn" href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a class="icon-btn" href="https://github.com/Robertn02" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg></a>
+            </div>
+          </div>
+
+          <form class="form" id="contact-form" novalidate>
+            <h3>Send a message</h3>
+            <div class="field">
+              <label for="f-email">Your email</label>
+              <input id="f-email" type="email" name="email" autocomplete="email" placeholder="name@company.com" required>
+            </div>
+            <div class="field">
+              <label for="f-subject">Subject</label>
+              <input id="f-subject" type="text" name="subject" placeholder="Business analyst role">
+            </div>
+            <div class="field">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" rows="4" placeholder="A few lines about the role or project" required></textarea>
+            </div>
+            <input type="hidden" name="source" value="Home">
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> Robert Nguyen</p>
+      <nav aria-label="Footer">
+        <a href="projects/">Projects</a>
+        <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Robertn02" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:phucn@marshall.usc.edu">Email</a>
+      </nav>
     </div>
   </footer>
-        
-  <!-- Toggle menu visibility and icon -->
-  <script>
-    const toggleBtn = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
 
-    if (toggleBtn && navMenu) {
-      toggleBtn.addEventListener('click', () => {
-        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-        toggleBtn.setAttribute('aria-expanded', String(!expanded));
-        navMenu.classList.toggle('show');
-        toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
-      });
-    }
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sliderTrack = document.querySelector('.slider-track');
-
-      if (sliderTrack && !sliderTrack.dataset.looped) {
-        sliderTrack.dataset.looped = 'true';
-        sliderTrack.innerHTML += sliderTrack.innerHTML; // duplicate items for seamless loop
-      }
-    });
-  </script>
-
-  <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw6dTnsOkly42s5ulUaM93uMCB_9UTckrBbT0KCVS-44XFllEsEbmcS3huk0SaB7TafGg/exec';
-  
-  const form = document.getElementById('contactForm');
-  const thankYou = document.getElementById('thankYouMessage');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const btn = form.querySelector('.contact-submit');
-    const originalText = btn.textContent;
-    const fd = new FormData(form);
-
-    btn.classList.add('is-busy');
-    btn.disabled = true;
-
-    const fields = form.querySelectorAll('input:not([type="hidden"]), textarea, button');
-
-    fields.forEach(el => el.disabled = true);
-
-    try {
-      const resp = await fetch(scriptURL, { method: 'POST', body: fd });
-
-      let ok = false;
-      try { ok = !!(await resp.json()).ok; } catch { ok = resp.ok; }
-
-      if (ok) {
-        form.reset();
-
-        fields.forEach(el => el.style.display = 'none');
-        thankYou.style.display = 'block';
-      } else {
-        alert('Submission failed. Please try again.');
-        fields.forEach(el => el.disabled = false);
-        btn.classList.remove('is-busy');
-        btn.disabled = false;
-        btn.textContent = originalText;
-      }
-    } catch (err) {
-      console.error('Network or CORS error:', err);
-      alert('Sorry, something went wrong!');
-      fields.forEach(el => el.disabled = false);
-      btn.classList.remove('is-busy');
-      btn.disabled = false;
-      btn.textContent = originalText;
-    }
-  });
-  </script>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

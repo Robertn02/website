@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Robert Nguyen | Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
-  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Robert Nguyen</title>
+  <meta name="description" content="Eleven analytics projects by Robert Nguyen: airline revenue management, EV smart charging, retail investor behavior, factor investing, demand analytics and more.">
+  <link rel="canonical" href="https://robertn02.github.io/website/projects/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects | Robert Nguyen">
+  <meta property="og:description" content="Eleven analyses across finance, aviation, consumer and operations.">
+  <meta property="og:url" content="https://robertn02.github.io/website/projects/">
+  <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1424" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Geist:wght@400..700&display=swap">
+  <link rel="stylesheet" href="../assets/css/site.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
@@ -13,735 +29,235 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-C8GLRVX10Y');
-  </script> 
-  
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-
-    :root {
-      --01: #f2f2f2;
-      --02: #eae4d5;
-      --03: #b6b09f;
-      --04: #0f172a;
-      --05: #ffffff;
-      --06: #117a65;
-      --07: #ea580c;
-      --08: #757575;
-
-      --font-playfair: 'Playfair Display', serif;
-      --font-poppins: 'Poppins', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-poppins);
-      background-color: var(--04);
-      color: var(--05);
-    }
-
-    header.site-header {
-      background-color: var(--04);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--03);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      width: 100%;
-      padding: 0 2rem;
-      position: relative;
-    }
-
-    .logo, .footer-brand h2 {
-      font-family: var(--font-playfair);
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--02);
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 2.25rem;
-    }
-
-    .nav-menu a {
-      color: var(--02);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
-    }
-
-    .nav-menu a:hover {
-      transform: scale(1.05);
-      text-shadow: 0 0 6px var(--02);
-    }
-
-    .btn-contact {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn-contact:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      color: var(--05);
-      background: none;
-      border: none;
-      z-index: 1001;
-    }
-
-    /* Projects */
-    .projects-section {
-      background: var(--05); /*f8f5f0*/
-      color: #1f252b;
-      padding: 6rem 2rem 10rem;
-    }
-
-    .projects-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .projects-header {
-      text-align: center;
-      max-width: 840px;
-      margin: 4rem auto 2.5rem;
-    }
-
-
-    .projects-title {
-      margin: 0;
-      font-family: var(--font-playfair);
-      font-weight: 700;
-      font-size: 2.6rem;
-      letter-spacing: 0.04em;
-      color: #1f252b;
-    }
-
-    .projects-intro {
-      margin: 0.85rem auto 0;
-      font-size: 1.02rem;
-      line-height: 1.65;
-      color: #50555a;
-      max-width: 720px;
-    }
-
-    .projects-divider {
-      border: none;
-      border-top: 1px solid rgba(31, 37, 43, 0.16);
-      max-width: 960px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .projects-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.65rem;
-      margin: 0 auto 2.5rem;
-      max-width: 720px;
-    }
-
-    .filter-btn {
-      border: 1px solid var(--05);
-      background: var(--05);
-      color: #1f4c44;
-      font-family: var(--font-poppins);
-      font-weight: 600;
-      font-size: 0.86rem;
-      letter-spacing: 0.05em;
-      padding: 0.5rem 1.15rem;
-      border-radius: 16px;
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-      backdrop-filter: blur(4px);
-    }
-
-    .filter-btn:hover {
-      background: rgba(17, 122, 101, 0.12);
-      border-color: rgba(17, 122, 101, 0.12);
-    }
-
-    .filter-btn.is-active {
-      background: var(--06);
-      color: var(--05);
-      border-color: rgba(17, 122, 101, 0.4);
-      box-shadow: none;
-    }
-
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      gap: 2.9rem;
-      background: var(--05);
-      border: 1px solid rgba(186, 175, 156, 0.45);
-      border-radius: 16px;
-      box-shadow: 0 18px 36px rgba(31, 37, 43, 0.08);
-      text-decoration: none;
-      color: inherit;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .project-card.is-hiding {
-      opacity: 0;
-      transform: translateY(12px);
-      pointer-events: none;
-    }
-
-    .project-card.is-hidden {
-      display: none;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(17, 122, 101, 0.35);
-      box-shadow: 0 26px 46px rgba(31, 37, 43, 0.12);
-    }
-
-    .project-media {
-      aspect-ratio: 3 / 2;
-      min-height: 250px;
-      background: rgba(15, 23, 42, 0.85);
-      overflow: hidden;
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
-      display: block;
-    }
-
-    .project-body {
-      padding: 1.7rem 2.1rem 1.7rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .project-meta {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #6b7076;
-    }
-
-    .project-title {
-      margin: 0;
-      font-family: var(--font-playfair);
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: #1f252b;
-      line-height: 1.45;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 6px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    }
-
-    .project-card:hover .project-title,
-    .project-card:focus-visible .project-title {
-      color: #0f172a;
-      text-decoration-color: rgba(15, 23, 42, 0.5);
-    }
-
-    .project-desc {
-      margin: 0;
-      font-size: 0.93rem;
-      line-height: 1.6;
-      color: #41464d;
-    }
-
-    .project-tags {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .project-tag {
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(17, 122, 101, 0.1);
-      color: var(--06);
-      white-space: nowrap;
-    }
-
-    .projects-footer-note {
-      margin-top: 3rem;
-      text-align: center;
-      font-style: italic;
-      font-family: var(--font-playfair);
-      color: var(--06);
-      font-size: 1.05rem;
-    }
-
-    .site-footer {
-      background-color: var(--04);
-      color: var(--02);
-      padding: 4rem 2rem 5rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 2rem;
-      gap: 5rem;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .footer-brand h2,
-    .footer-contact h3,
-    .footer-nav h3 {
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    .footer-contact h3,
-    .footer-nav h3 {
-      color: var(--02);
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-contact ul,
-    .footer-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-contact li,
-    .footer-nav li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--02);
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-contact a,
-    .footer-nav a {
-      color: var(--02);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-contact a:hover,
-    .footer-nav a:hover {
-      color: var(--05);
-    }
-
-    .footer-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 1rem;
-      vertical-align: middle;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 900px) {
-      .projects-section { padding: 6rem 1.75rem 5rem; }
-      .project-card { grid-template-columns: 280px minmax(0, 1fr); gap: 2.4rem; }
-    }
-
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-      }
-
-      .logo,
-      .footer-brand h2 {
-        font-size: 28px;
-      }
-
-      .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
-      }
-
-      .nav-menu {
-        flex-direction: column;
-        gap: 0.75rem;
-        width: 100%;
-        background: var(--04);
-        position: absolute;
-        top: 70px;
-        left: 0;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.show {
-        max-height: 500px;
-        padding: 1rem 0;
-        opacity: 1;
-      }
-
-      .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 0;
-      }
-
-      .projects-section { padding: 5.5rem 1.25rem 4.5rem; }
-      .projects-title { font-size: 2.15rem; }
-      .projects-intro { font-size: 0.95rem; }
-      .projects-filters { gap: 0.5rem; }
-      .filter-btn { flex: 1 1 calc(50% - 0.5rem); font-size: 0.8rem; }
-
-      .project-card {
-        grid-template-columns: 1fr;
-        gap: 1.3rem;
-      }
-
-      .project-media { aspect-ratio: 5 / 3; min-height: 220px; }
-      .project-body { padding: 1.6rem 1.75rem 1.6rem; gap: 0.5rem; }
-      .project-title { font-size: 1.25rem; }
-      .project-desc { font-size: 0.9rem; }
-
-      .footer-container {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        text-align: center;
-      }
-    }
-  </style>
+  </script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="logo" href="https://Robertn02.github.io/website/">ROBERT NGUYEN</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
+  </svg>
 
-      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="https://Robertn02.github.io/website/">HOME</a>
-        <a href="https://Robertn02.github.io/website/experience/">EXPERIENCE</a>
-        <a href="https://Robertn02.github.io/website/projects/">PROJECTS</a>
-        <a href="https://Robertn02.github.io/website/blogs/">BLOGS</a>
-        <a href="https://Robertn02.github.io/website/#contact" class="btn-contact">CONTACT ME</a>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../">
+        <img src="../assets/img/robert-headshot.webp" width="36" height="36" alt="">
+        <span>Robert Nguyen</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="../#work" class="is-active" aria-current="page">Work</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#toolkit">Toolkit</a>
+        <a href="../#about">About</a>
       </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary btn-sm" href="../assets/Robert-Nguyen-Resume.pdf" data-resume hidden>Résumé</a>
+        <a class="btn btn-primary btn-sm" href="../#contact">Contact</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg class="icon menu-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon menu-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="projects-section">
-      <div class="projects-container">
-        <div class="projects-header">
-          <h1 class="projects-title">Projects</h1>
-          <p class="projects-intro">Selected analytics and machine learning projects across aviation, finance, operations, and consumer domains.</p>
+  <main id="main">
+    <header class="container page-head">
+      <a class="back" href="../"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Home</a>
+      <h1>Projects</h1>
+      <p>Eleven analyses across finance, aviation, consumer and operations. Each card links to the code and write-up on GitHub.</p>
+
+      <div class="tabs" role="group" aria-label="Filter projects by role" data-filter>
+        <button class="tab" type="button" data-value="all" aria-pressed="true">All <span class="tab-count"></span></button>
+        <button class="tab" type="button" data-value="strategy" aria-pressed="false">Strategy <span class="tab-count"></span></button>
+        <button class="tab" type="button" data-value="product" aria-pressed="false">Product <span class="tab-count"></span></button>
+        <button class="tab" type="button" data-value="analytics" aria-pressed="false">Analytics <span class="tab-count"></span></button>
+      </div>
+    </header>
+
+    <section class="container" aria-label="Project list">
+      <div class="work-grid">
+        <article class="work-card" data-for="strategy product analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-aa.webp" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
+            <span class="metric">−18.9% revenue loss</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">Airline revenue management</span>
+            <h3><a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">Reroute: disruption seat allocation</a></h3>
+            <p>A misconnect-risk model (AUC 0.92) feeds a linear program that reallocates seats in about 7 ms.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">LightGBM</span><span class="chip">FastAPI</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="strategy product">
+          <div class="work-media">
+            <img src="../assets/img/project-rivian.webp" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
+            <span class="metric">476k lbs CO₂ saved a year</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">EV and energy</span>
+            <h3><a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">Rivian smart charging and incentives</a></h3>
+            <p>Shifting charging windows cuts emissions; a −3.2 price elasticity sizes a 10.7–21.3% sales lift.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Random forest</span><span class="chip">Elasticity</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="strategy analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-robinhood.webp" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
+            <span class="metric">ρ &gt; 0.9 across top holdings</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">Capital markets</span>
+            <h3><a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">Robinhood retail investor herding</a></h3>
+            <p>Six stocks dominated retail holdings from 2018 to 2020 and moved almost in lockstep.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">CRSP</span><span class="chip">RobinTrack</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="product analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-uber.webp" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
+            <span class="metric">R² 0.76 from time alone</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">Mobility</span>
+            <h3><a href="https://github.com/Robertn02/Uber-NYC-Pickup-Demand-and-Hotspot-Analytics" target="_blank" rel="noopener">NYC Uber demand and hotspots</a></h3>
+            <p>Weekday commuting drives about 75% of pickups, peaking between 4 and 9 pm.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">OLS</span><span class="chip">K-means</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="product">
+          <div class="work-media">
+            <img src="../assets/img/project-spotify.webp" width="467" height="316" loading="lazy" alt="Spotify logo over a person wearing headphones">
+            <span class="metric">1 of 3 drivers mattered</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">Consumer subscriptions</span>
+            <h3><a href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">What makes listeners pay for Premium</a></h3>
+            <p>Podcast variety, not age or device, predicts who is willing to upgrade.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Logistic regression</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-etf.webp" width="600" height="338" loading="lazy" alt="ETF lettering over a stock chart">
+            <span class="metric">Sharpe 0.07, a null result</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">Quant research</span>
+            <h3><a href="https://github.com/Robertn02/ETF-Sentiment-and-Crowdedness-Factor-Performance-Analysis" target="_blank" rel="noopener">ETF sentiment and crowding signals</a></h3>
+            <p>Long-short tests on 11 sector ETFs, 2005–2024: no significant alpha, honestly reported.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Fama-French</span><span class="chip">Backtesting</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="strategy analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-spy.webp" width="960" height="640" loading="lazy" alt="S&amp;P 500 ticker board">
+            <span class="metric">Alpha vanishes after FF3</span>
+          </div>
+          <div class="work-body">
+            <span class="tag">Factor investing</span>
+            <h3><a href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis" target="_blank" rel="noopener">Fundamental indexing vs. market cap</a></h3>
+            <p>Pre-2005 CAPM alphas mostly disappear once size and value factors are controlled for.</p>
+            <div class="chips"><span class="chip">CRSP</span><span class="chip">Compustat</span><span class="chip">CAPM</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="strategy analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-walmart.webp" width="960" height="640" loading="lazy" alt="Walmart storefront">
+          </div>
+          <div class="work-body">
+            <span class="tag">Retail</span>
+            <h3><a href="https://github.com/Robertn02/Walmart-Retail-Performance-Analytics-Sales-Drivers-and-Holiday-Effects" target="_blank" rel="noopener">Walmart sales drivers and holiday effects</a></h3>
+            <p>Fixed-effects regression, holiday uplift and K-means segmentation across stores.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Regression</span><span class="chip">K-means</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="strategy analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-lax.webp" width="768" height="432" loading="lazy" alt="LAX airport sign">
+          </div>
+          <div class="work-body">
+            <span class="tag">Airports</span>
+            <h3><a href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX" target="_blank" rel="noopener">LAX flight delay prediction</a></h3>
+            <p>Departure delay is the strongest predictor; delays cluster in summer and late evening.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Decision trees</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-insurance.webp" width="480" height="268" loading="lazy" alt="Insurance claim form">
+          </div>
+          <div class="work-body">
+            <span class="tag">Insurance pricing</span>
+            <h3><a href="https://github.com/Robertn02/Insurance-Claim-Prediction-Machine-Learning-Pipeline-XGBoost-Tweedie" target="_blank" rel="noopener">Insurance claim prediction pipeline</a></h3>
+            <p>Loss cost and claim occurrence from one pipeline: XGBoost Tweedie plus a random forest.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Random forest</span></div>
+          </div>
+        </article>
+
+        <article class="work-card" data-for="strategy analytics">
+          <div class="work-media">
+            <img src="../assets/img/project-semiconductor.webp" width="960" height="556" loading="lazy" alt="Semiconductor wafer">
+          </div>
+          <div class="work-body">
+            <span class="tag">Semiconductors · Team project</span>
+            <h3>Semiconductor yield analytics</h3>
+            <p>Throughput dashboards and anomaly detection to lift first-pass yield across product lines.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Power BI</span><span class="chip">ML</span></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="empty" data-empty hidden>No projects match this filter yet.</p>
+    </section>
+
+    <section class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="cta cta--compact">
+          <div>
+            <h2 id="contact-title">Want the deeper dive?</h2>
+            <p class="cta-sub">Happy to walk through the data, the model and the decision behind any of these.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="mailto:phucn@marshall.usc.edu"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+            <div class="cta-social">
+              <a class="icon-btn" href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a class="icon-btn" href="https://github.com/Robertn02" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg></a>
+            </div>
+          </div>
         </div>
-
-        <hr class="projects-divider" />
-
-        <div class="projects-filters" role="group" aria-label="Project filters">
-          <button type="button" class="filter-btn is-active" data-filter="all">All</button>
-          <button type="button" class="filter-btn" data-filter="retail-consumer">Retail & Consumer</button>
-          <button type="button" class="filter-btn" data-filter="aviation-mobility">Aviation & Mobility</button>
-          <button type="button" class="filter-btn" data-filter="finance">Finance & Investing</button>
-          <button type="button" class="filter-btn" data-filter="people">People Analytics</button>
-          <button type="button" class="filter-btn" data-filter="operations">Operations & Semiconductor</button>
-          <button type="button" class="filter-btn" data-filter="data-science">Data Science & ML</button>
-        </div>
-
-        <div class="projects-grid" id="projects-grid">
-          <a class="project-card" data-category="finance data-science" href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/SPY.jpg" alt="Finance & Investing">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Finance & Investing</span>
-              <h2 class="project-title">Fundamental Indexation and Smart Beta Performance Analysis</h2>
-              <p class="project-desc">Investigates how fundamental metrics influence portfolio performance relative to market capitalization weighting.</p>
-              <div class="project-tags">
-                <span class="project-tag">CAPM</span>
-                <span class="project-tag">FF3</span>
-                <span class="project-tag">Time Series</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="finance data-science" href="https://github.com/Robertn02/ETF-Sentiment-and-Crowdedness-Factor-Performance-Analysis" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/ETF.webp" alt="ETF Sentiment Analysis">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Finance & Investing</span>
-              <h2 class="project-title">ETF Sentiment and Crowdedness Factor Performance Analysis</h2>
-              <p class="project-desc">Investigates whether behavioral signals derived from public ETF data can predict future sector ETF returns.</p>
-              <div class="project-tags">
-                <span class="project-tag">CAPM</span>
-                <span class="project-tag">FF3</span>
-                <span class="project-tag">Time Series</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="finance data-science" href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Robinhood.jpg" alt="Robinhood">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Finance & Investing</span>
-              <h2 class="project-title">Robinhood & CRSP Retail Investor Flow Behavioral Analytics</h2>
-              <p class="project-desc">Explores retail investor behavior using holdings data from RobinTrack (Robinhood) and security identifiers from CRSP</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Logistic</span>
-                <span class="project-tag">SHAP</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="finance retail-consumer" href="https://github.com/Robertn02/Walmart-Retail-Performance-Analytics-Sales-Drivers-and-Holiday-Effects" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Walmart.jpg" alt="Walmart">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Retail & Consumer</span>
-              <h2 class="project-title">Walmart Retail Performance Analytics</h2>
-              <p class="project-desc">Comprehensive store-level analysis of Walmart’s retail performance focusing on sales drivers, holiday impact, productivity, and segmentation.</p>
-              <div class="project-tags">
-                <span class="project-tag">EDA</span>
-                <span class="project-tag">Regression</span>
-                <span class="project-tag">K-Means</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="aviation-mobility data-science" href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/AA.jpg" alt="Aviation">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Aviation & Mobility</span>
-              <h2 class="project-title">Airline Revenue Management IROPS Seat Allocation Optimizer</h2>
-              <p class="project-desc">A seat allocation optimizer for irregular operations that balances revenue management with recovery planning in airline disruptions.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Optimization</span>
-                <span class="project-tag">Airline IROPS</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="aviation-mobility data-science" href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/LAX.jpg" alt="Aviation">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Aviation & Mobility</span>
-              <h2 class="project-title">Flight Delay Prediction and Airport Optimization at LAX</h2>
-              <p class="project-desc">This analysis aims to inform strategies for optimizing airport operations and improving punctuality.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Time Series</span>
-                <span class="project-tag">Machine Learning</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="aviation-mobility data-science" href="https://github.com/Robertn02/Uber-Ride-Sharing-Demand-and-Rider-Behavior-Analytics" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Uber.jpg" alt="Uber">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Aviation & Mobility</span>
-              <h2 class="project-title">Uber NYC Pickup Demand and Hotspot Analytics</h2>
-              <p class="project-desc">Uncover city-level demand trends, identify behavioral segments, and explain how factors drive ridership dynamics.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Time Series</span>
-                <span class="project-tag">Machine Learning</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="aviation-mobility data-science" href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Rivian.jpg" alt="Rivian">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Aviation & Mobility</span>
-              <h2 class="project-title">EV Smart Charging: Rivian Emissions Optimization and Incentive Analysis</h2>
-              <p class="project-desc">A full analysis of how smart-charging can reduce EV emissions, cut driver costs, and boost Rivian EV adoption through targeted incentives.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Time Series</span>
-                <span class="project-tag">Machine Learning</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="operations data-science" href="https://github.com/plvu99/Semiconductor-Yield-Analytics" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Semiconductor.jpg" alt="Semiconductor Yield Analytics">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Semiconductors & Operations</span>
-              <h2 class="project-title">Semiconductor Yield Analytics</h2>
-              <p class="project-desc">Fab throughput dashboards and anomaly detection to lift first-pass yield across product lines.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Power BI</span>
-                <span class="project-tag">ML</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="finance data-science" href="https://github.com/Robertn02/Insurance-Claim-Prediction-Machine-Learning-Pipeline-XGBoost-Tweedie" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Insurance.jpg" alt="Insurance Claim Prediction">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Finance & Investing</span>
-              <h2 class="project-title">Insurance Claim Prediction Pipeline (XGBoost Tweedie)</h2>
-              <p class="project-desc">Pricing models and severity drivers using GLM and Tweedie frameworks for underwriting.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">GLM</span>
-                <span class="project-tag">Tweedie</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="project-card" data-category="retail-consumer data-science" href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">
-            <div class="project-media">
-              <img src="../Images/Projects/Spotify.jpg" alt="Spotify">
-            </div>
-            <div class="project-body">
-              <span class="project-meta">Retail & Consumer</span>
-              <h2 class="project-title">Spotify Premium Subscription Behavior Modeling and Driver Analysis</h2>
-              <p class="project-desc">This project explores the behavior of premium Spotify subscribers and their drivers of engagement and retention.</p>
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">SQL</span>
-                <span class="project-tag">Clustering</span>
-              </div>
-            </div>
-          </a>          
-        </div>
-
-        <p class="projects-footer-note">Every project sharpened how I bridge analytics with strategy — reach out if you’d like the deeper dive.</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>ROBERT NGUYEN</h2>
-      </div>
-
-      <div class="footer-contact">
-        <h3>CONTACT</h3>
-        <ul>
-          <li><a href="tel:+12132722966">213-272-2966</a></li>
-          <li><a href="mailto:Phucn@marshall.usc.edu">Phucn@marshall.usc.edu</a></li>
-          <li>Los Angeles, CA, United States</li>
-          <li>
-            <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
-            <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="../Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
-            <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="../Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-nav">
-        <h3>NAVIGATION</h3>
-        <ul>
-          <li><a href="https://Robertn02.github.io/website/">Home</a></li>
-          <li><a href="https://Robertn02.github.io/website/experience/">Experience</a></li>
-          <li><a href="https://Robertn02.github.io/website/projects/">Projects</a></li>
-          <li><a href="https://Robertn02.github.io/website/blogs/">Blogs</a></li>
-        </ul>
-      </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> Robert Nguyen</p>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Robertn02" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:phucn@marshall.usc.edu">Email</a>
+      </nav>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (toggleBtn && navMenu) {
-      toggleBtn.addEventListener('click', () => {
-        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-        toggleBtn.setAttribute('aria-expanded', String(!expanded));
-        navMenu.classList.toggle('show');
-        toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
-      });
-    }
-
-    const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
-    const projectCards = Array.from(document.querySelectorAll('.project-card'));
-
-    function applyFilter(filter) {
-      projectCards.forEach((card) => {
-        const categories = (card.dataset.category || '').split(' ');
-        const shouldShow = filter === 'all' || categories.includes(filter);
-        card.style.display = shouldShow ? 'grid' : 'none';
-      });
-    }
-
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        if (button.classList.contains('is-active')) return;
-        filterButtons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
-        applyFilter(button.dataset.filter || 'all');
-      });
-    });
-
-    applyFilter('all');
-
-  </script>
+  <script src="../assets/js/site.js" defer></script>
 </body>
 </html>
