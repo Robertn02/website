@@ -2,7 +2,7 @@
   const ROLES = ['strategy', 'product', 'analytics'];
   const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw6dTnsOkly42s5ulUaM93uMCB_9UTckrBbT0KCVS-44XFllEsEbmcS3huk0SaB7TafGg/exec';
 
-  /* ---------- Theme (dark by default, light is opt-in) ---------- */
+  /* ---------- Theme: every visit starts dark; light lasts for the session ---------- */
 
   const root = document.documentElement;
   const themeBtn = document.querySelector('[data-theme-toggle]');
@@ -17,7 +17,7 @@
     themeBtn.addEventListener('click', () => {
       const light = root.dataset.theme !== 'light';
       if (light) root.dataset.theme = 'light'; else delete root.dataset.theme;
-      try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch { /* storage blocked */ }
+      try { sessionStorage.setItem('theme', light ? 'light' : 'dark'); } catch { /* storage blocked */ }
       syncTheme();
     });
   }
@@ -136,7 +136,7 @@
         status.textContent = 'Message sent. Thanks, I’ll be in touch soon.';
       } catch (err) {
         console.error(err);
-        status.textContent = 'That didn’t go through. Email me at phucn@marshall.usc.edu instead.';
+        status.textContent = 'That didn’t go through. Message me on LinkedIn instead.';
       } finally {
         submit.removeAttribute('aria-busy');
         submit.disabled = false;

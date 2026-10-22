@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#0a1120">
-  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
+  <script>try{localStorage.removeItem('theme');if(sessionStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -32,7 +32,6 @@
     "name": "Robert Nguyen",
     "url": "https://robertn02.github.io/website/",
     "image": "https://robertn02.github.io/website/assets/img/robert-og.jpg",
-    "email": "mailto:phucn@marshall.usc.edu",
     "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" },
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "USC Marshall School of Business" },
@@ -57,16 +56,12 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
     <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
     <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16v-4M12 16V8M17 16V5"/></symbol>
-    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 7 6 6 4-4 8 8"/><path d="M21 11v6h-6"/></symbol>
     <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18"/></symbol>
     <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5-10-5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
     <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M10 17h4"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 20a6.5 6.5 0 0 0-2.4-5"/></symbol>
@@ -118,7 +113,7 @@
           <span class="status rise" style="--d:0"><span class="status-dot" aria-hidden="true"></span>Open to strategy, product and analytics roles</span>
           <p class="hero-hello rise" style="--d:1">Hi, I’m <strong>Robert Nguyen</strong></p>
           <h1 class="rise" style="--d:2">I turn business questions into clear, <span class="nowrap">data-backed</span> decisions.</h1>
-          <p class="hero-sub rise" style="--d:3">Business analyst with a background in strategy consulting, corporate finance and product. MS in Business Analytics at USC Marshall.</p>
+          <p class="hero-sub rise" style="--d:3">Strategy and business analyst for pricing, revenue and demand. MS in Business Analytics, USC Marshall.</p>
 
           <div class="hero-actions rise" style="--d:4">
             <a class="btn btn-primary" href="#work">View my work <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -129,26 +124,22 @@
 
           <ul class="creds rise" style="--d:5" aria-label="Background">
             <li class="cred">
-              <span class="logo-box"><img class="on-dark" src="assets/img/logos/ey-mark-dark.webp" alt="" width="97" height="112"><img class="on-light" src="assets/img/logos/ey-mark-light.webp" alt="" width="97" height="112"></span>
+              <span class="logo-box logo-box--fill"><img src="assets/img/logos/stealth.webp" alt="" width="200" height="200"></span>
+              <div><strong>Stealth startup</strong><span>Pricing Strategy Analyst</span></div>
+            </li>
+            <li class="cred">
+              <span class="logo-box logo-box--fill"><img src="assets/img/logos/eyp.webp" alt="" width="200" height="200"></span>
               <div><strong>EY-Parthenon</strong><span>Strategy and Transactions</span></div>
             </li>
             <li class="cred">
-              <span class="logo-box" aria-hidden="true">USC</span>
+              <span class="logo-box logo-box--fill"><img src="assets/img/logos/usc.webp" alt="" width="192" height="192"></span>
               <div><strong>USC Marshall</strong><span>MS Business Analytics</span></div>
-            </li>
-            <li class="cred">
-              <span class="logo-box" aria-hidden="true">T</span>
-              <div><strong>Taseco Group</strong><span>Financial Analyst</span></div>
             </li>
           </ul>
         </div>
 
         <div class="portrait rise" style="--d:1">
           <img src="assets/img/robert-headshot.webp" width="960" height="960" alt="Portrait of Robert Nguyen" fetchpriority="high">
-          <div class="float-card float-card--a">
-            <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span>
-            <div><strong>−18.9%</strong><span>airline revenue loss<br>in simulation</span></div>
-          </div>
           <div class="float-card float-card--b">
             <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span>
             <div><strong>11 projects</strong><span>published on GitHub</span></div>
@@ -163,7 +154,7 @@
         <div class="section-head">
           <div>
             <h2 id="expertise-title">Where I add value</h2>
-            <p>Three kinds of problems I’ve been trusted with. Pick the one you’re hiring for.</p>
+            <p>Pick the one you’re hiring for.</p>
           </div>
         </div>
 
@@ -171,35 +162,35 @@
           <article class="x-card">
             <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
             <h3>Strategy and consulting</h3>
-            <p>Sizing markets and testing deals until there is a recommendation to stand behind.</p>
+            <p>Diligence and scenarios that end in a clear recommendation.</p>
             <ul class="checks">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Due diligence and market sizing at <span class="nowrap">EY-Parthenon</span></span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>DCF and FP&amp;A for deal decisions</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>1st place, NEU Scientific Research 2022</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>IPO revenue diligence at <span class="nowrap">EY-Parthenon</span></span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>80-institution peer benchmark</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>DCF and scenario models</span></li>
             </ul>
             <a class="link-arrow" href="projects/?for=strategy">Strategy projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
 
           <article class="x-card">
             <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
-            <h3>Product and revenue</h3>
-            <p>Pricing and capacity decisions grounded in how customers actually behave.</p>
+            <h3>Pricing and revenue</h3>
+            <p>Pricing grounded in how customers actually behave.</p>
             <ul class="checks">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Product manager, revenue optimization</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Demand forecasting and price elasticity</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Optimization models shipped as APIs</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Tiered pricing across 10+ zones</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Demand forecasts for surge pricing</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Per-order unit economics</span></li>
             </ul>
-            <a class="link-arrow" href="projects/?for=product">Product projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="link-arrow" href="projects/?for=product">Pricing projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
 
           <article class="x-card">
             <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
             <h3>Business and data analytics</h3>
-            <p>Models and dashboards that make the answer obvious to the people who decide.</p>
+            <p>Models and dashboards that make the answer obvious.</p>
             <ul class="checks">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Python, SQL, Tableau and Power BI</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>LightGBM, XGBoost, regression, clustering</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Executive BI dashboards at Taseco Land</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Python, SQL, R, Tableau, Power BI</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Forecasting, regression, optimization</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>$150K savings from cost analysis</span></li>
             </ul>
             <a class="link-arrow" href="projects/?for=analytics">Analytics projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
@@ -213,7 +204,7 @@
         <div class="section-head">
           <div>
             <h2 id="work-title">Selected work</h2>
-            <p>Real data, a real business question, and the number that answered it.</p>
+            <p>Real data, real questions, and the number that mattered.</p>
           </div>
           <a class="link-arrow" href="projects/">All 11 projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
@@ -226,8 +217,8 @@
             </div>
             <div class="work-body">
               <span class="tag">Airline revenue management</span>
-              <h3><a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">Reroute: who gets the last seats when flights fall apart</a></h3>
-              <p>A misconnect-risk model feeds a linear program that reallocates seats during disruptions, packaged as an API.</p>
+              <h3><a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">Reroute: airline disruption seat allocation</a></h3>
+              <p>A risk model and linear program that reassign seats when flights are disrupted.</p>
               <div class="stats">
                 <div class="stat"><strong>−18.9%</strong><span>expected revenue loss vs. manual</span></div>
                 <div class="stat"><strong>0.92</strong><span>AUC, risk model</span></div>
@@ -246,7 +237,7 @@
             <div class="work-body">
               <span class="tag">EV and energy</span>
               <h3><a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">Rivian smart charging and incentives</a></h3>
-              <p>Shifting charging windows cuts emissions; an incentive projects a 10.7–21.3% sales lift.</p>
+              <p>Smarter charging cuts emissions; incentives could lift sales 11–21%.</p>
             </div>
           </article>
 
@@ -259,7 +250,7 @@
             <div class="work-body">
               <span class="tag">Capital markets</span>
               <h3><a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">Robinhood retail investor herding</a></h3>
-              <p>Six stocks dominated retail holdings from 2018 to 2020 and moved almost in lockstep.</p>
+              <p>Six stocks dominated retail holdings and moved in lockstep.</p>
             </div>
           </article>
 
@@ -272,7 +263,7 @@
             <div class="work-body">
               <span class="tag">Mobility</span>
               <h3><a href="https://github.com/Robertn02/Uber-NYC-Pickup-Demand-and-Hotspot-Analytics" target="_blank" rel="noopener">NYC Uber demand and hotspots</a></h3>
-              <p>Weekday commuting drives about 75% of pickups, peaking between 4 and 9 pm.</p>
+              <p>Weekday commuting drives about 75% of pickups.</p>
             </div>
           </article>
 
@@ -285,7 +276,7 @@
             <div class="work-body">
               <span class="tag">Consumer subscriptions</span>
               <h3><a href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">What makes listeners pay for Premium</a></h3>
-              <p>Podcast variety, not age or device, predicts who is willing to upgrade.</p>
+              <p>Podcast variety, not age or device, predicts upgrades.</p>
             </div>
           </article>
         </div>
@@ -298,50 +289,65 @@
         <div class="section-head">
           <div>
             <h2 id="experience-title">Experience</h2>
-            <p>From corporate finance in Hanoi to strategy and product work in Los Angeles.</p>
+            <p>From FP&amp;A in Vietnam to strategy and pricing in Los Angeles.</p>
           </div>
         </div>
 
         <div class="exp-grid">
           <ol class="timeline">
             <li class="t-item">
-              <span class="logo-box" aria-hidden="true">S</span>
+              <span class="logo-box logo-box--fill"><img src="assets/img/logos/stealth.webp" alt="" width="200" height="200"></span>
               <div>
-                <div class="t-head"><h3>Product Manager, Revenue Optimization</h3><span class="t-date">Sep 2025 – Mar 2026</span></div>
-                <p class="t-org">Stealth startup</p>
-                <p>Platform pricing and capacity allocation, driven by demand forecasting and elasticity analysis.</p>
+                <div class="t-head"><h3>Pricing Strategy Analyst</h3><span class="t-date">2025 – 2026</span></div>
+                <p class="t-org">Stealth startup · Los Angeles</p>
+                <ul class="t-points">
+                  <li>Tiered delivery pricing from elasticity across 10+ zones.</li>
+                  <li>24-hour demand forecast to set surge-pricing thresholds.</li>
+                </ul>
               </div>
             </li>
             <li class="t-item">
-              <span class="logo-box"><img class="on-dark" src="assets/img/logos/ey-mark-dark.webp" alt="" width="97" height="112"><img class="on-light" src="assets/img/logos/ey-mark-light.webp" alt="" width="97" height="112"></span>
+              <span class="logo-box logo-box--fill"><img src="assets/img/logos/eyp.webp" alt="" width="200" height="200"></span>
               <div>
-                <div class="t-head"><h3>Strategy and Transactions Consultant</h3><span class="t-date">2024</span></div>
-                <p class="t-org">EY-Parthenon</p>
-                <p>Due diligence and market sizing that steered IPO and M&amp;A engagements in consumer and tech.</p>
+                <div class="t-head"><h3>Strategy and Transactions Intern</h3><span class="t-date">2025</span></div>
+                <p class="t-org">EY-Parthenon · APAC</p>
+                <ul class="t-points">
+                  <li>Revenue decomposition across 4 product lines for an IPO target.</li>
+                  <li>Benchmarked 80 institutions on growth, NIM and margin.</li>
+                </ul>
               </div>
             </li>
             <li class="t-item">
-              <span class="logo-box" aria-hidden="true">USC</span>
+              <span class="logo-box logo-box--fill"><img src="assets/img/logos/usc.webp" alt="" width="192" height="192"></span>
               <div>
-                <div class="t-head"><h3>Data Research Analyst</h3><span class="t-date">2024</span></div>
-                <p class="t-org">Marshall Behavioral Research Lab, USC</p>
-                <p>Automated large datasets and applied machine learning to behavioral studies.</p>
+                <div class="t-head"><h3>Research Assistant</h3><span class="t-date">2024 – 2026</span></div>
+                <p class="t-org">University of Southern California · Los Angeles</p>
+                <ul class="t-points">
+                  <li>Automated study datasets and applied machine learning.</li>
+                  <li>Improved participant-tracking workflows.</li>
+                </ul>
               </div>
             </li>
             <li class="t-item">
-              <span class="logo-box" aria-hidden="true">T</span>
+              <span class="logo-box logo-box--real"><img src="assets/img/logos/taseco.webp" alt="" width="96" height="96"></span>
               <div>
-                <div class="t-head"><h3>Financial Analyst</h3><span class="t-date">2023 – 2024</span></div>
-                <p class="t-org">Taseco Group</p>
-                <p>Bond compliance, FP&amp;A for deals, and DCF forecasting for leadership decisions.</p>
+                <div class="t-head"><h3>Financial Analyst</h3><span class="t-date">2024</span></div>
+                <p class="t-org">Taseco Group · Vietnam</p>
+                <ul class="t-points">
+                  <li>Price-volume scenario models for 6 business lines.</li>
+                  <li>5-year revenue projections for DCF valuations.</li>
+                </ul>
               </div>
             </li>
             <li class="t-item">
-              <span class="logo-box" aria-hidden="true">T</span>
+              <span class="logo-box logo-box--real"><img src="assets/img/logos/taseco.webp" alt="" width="96" height="96"></span>
               <div>
-                <div class="t-head"><h3>Data Analyst</h3><span class="t-date">2022 – 2023</span></div>
-                <p class="t-org">Taseco Land Investment</p>
-                <p>Industrial-park operations dashboards and BI reporting for executive updates.</p>
+                <div class="t-head"><h3>Financial Analyst Intern</h3><span class="t-date">2023</span></div>
+                <p class="t-org">Taseco Air Services · Vietnam</p>
+                <ul class="t-points">
+                  <li>Found $150K in annual savings through cost-driver analysis.</li>
+                  <li>Sized $600K in annual revenue upside at an airport.</li>
+                </ul>
               </div>
             </li>
           </ol>
@@ -350,22 +356,22 @@
             <section class="side-card" aria-labelledby="edu-title">
               <h3 id="edu-title"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>Education</h3>
               <ul class="side-list">
-                <li><strong>MS in Business Analytics (STEM)</strong><span>USC Marshall School of Business · 2024 – present</span></li>
-                <li><strong>Bachelor of Banking and Finance</strong><span>National Economics University, Hanoi · 2020 – 2024</span></li>
+                <li class="edu"><span class="logo-box logo-box--fill"><img src="assets/img/logos/usc.webp" alt="" width="192" height="192"></span><div><strong>MS in Business Analytics (STEM)</strong><span>USC Marshall School of Business</span><span>2024 – 2026</span></div></li>
+                <li class="edu"><span class="logo-box logo-box--real logo-box--tight"><img src="assets/img/logos/neu.webp" alt="" width="160" height="160"></span><div><strong>BS in Finance and Banking</strong><span>National Economics University, Hanoi</span><span>2020 – 2024</span></div></li>
               </ul>
             </section>
             <section class="side-card" aria-labelledby="awards-title">
               <h3 id="awards-title"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg>Awards</h3>
               <ul class="side-list">
-                <li><strong>Vietcombank Excellence Award</strong><span>Academic performance and campus impact · 2023</span></li>
-                <li><strong>1st place, NEU Scientific Research</strong><span>National Economics University · 2022</span></li>
-                <li><strong>3rd place, Vietnam Scientific Research</strong><span>National competition · 2022</span></li>
+                <li class="row"><strong>Vietcombank Excellence Award</strong><span>2023</span></li>
+                <li class="row"><strong>1st place, NEU Scientific Research</strong><span>2022</span></li>
+                <li class="row"><strong>3rd place, Vietnam Scientific Research</strong><span>2022</span></li>
               </ul>
             </section>
             <section class="side-card" aria-labelledby="lead-title">
               <h3 id="lead-title"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Leadership</h3>
               <ul class="side-list">
-                <li><strong>Research Executive, Academic Research Club AEP</strong><span>Led research teams and mentored junior members · 2021 – 2022</span></li>
+                <li><strong>Research Executive</strong><span>Academic Research Club AEP · 2021 – 2022</span></li>
               </ul>
             </section>
           </div>
@@ -396,15 +402,15 @@
         <div class="methods">
           <div class="method">
             <h3>Strategy and finance</h3>
-            <div class="chips"><span class="chip">Due diligence</span><span class="chip">Market sizing</span><span class="chip">DCF</span><span class="chip">FP&amp;A</span><span class="chip">Factor models</span></div>
+            <div class="chips"><span class="chip">Commercial diligence</span><span class="chip">Market sizing</span><span class="chip">DCF</span><span class="chip">FP&amp;A</span><span class="chip">Scenario modeling</span><span class="chip">Capital IQ</span></div>
           </div>
           <div class="method">
             <h3>Modeling</h3>
-            <div class="chips"><span class="chip">Regression</span><span class="chip">LightGBM</span><span class="chip">XGBoost</span><span class="chip">Clustering</span><span class="chip">Time series</span><span class="chip">Optimization</span></div>
+            <div class="chips"><span class="chip">Demand forecasting</span><span class="chip">Price elasticity</span><span class="chip">Regression</span><span class="chip">Clustering</span><span class="chip">Optimization</span><span class="chip">LightGBM</span></div>
           </div>
           <div class="method">
-            <h3>Shipping</h3>
-            <div class="chips"><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Executive decks</span></div>
+            <h3>Data and delivery</h3>
+            <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Excel VBA</span><span class="chip">ETL</span><span class="chip">FastAPI</span><span class="chip">Executive decks</span></div>
           </div>
         </div>
       </div>
@@ -421,21 +427,21 @@
 
         <div class="about-copy">
           <h2 id="about-title">About me</h2>
-          <p>I trained in banking and finance in Hanoi, then kept moving toward the data: BI for a real-estate developer, financial analysis on deals, due diligence at EY-Parthenon, and now analytics at USC Marshall.</p>
-          <p>I start from the decision, structure the problem, then let the data argue. I’d rather hand a team one clear recommendation than ten interesting charts.</p>
+          <p>Trained in finance in Hanoi, now working where strategy, pricing and data meet, most recently at EY-Parthenon and a Los Angeles startup.</p>
+          <p>I start from the decision, then let the data argue.</p>
 
           <div class="values">
             <div class="value">
               <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
-              <div><strong>Align early</strong><span>Ask the scoping questions up front so everyone solves the same problem.</span></div>
+              <div><strong>Align early</strong><span>Scope the problem before solving it.</span></div>
             </div>
             <div class="value">
               <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg></span>
-              <div><strong>Follow through</strong><span>Track priorities, stay calm when plans change, finish what I start.</span></div>
+              <div><strong>Follow through</strong><span>Finish what I start, even when plans change.</span></div>
             </div>
             <div class="value">
               <span class="x-icon"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg></span>
-              <div><strong>Put a first answer on the table</strong><span>When direction is unclear, propose a path the team can react to.</span></div>
+              <div><strong>Lead with an answer</strong><span>Propose a path when direction is unclear.</span></div>
             </div>
           </div>
         </div>
@@ -448,16 +454,12 @@
         <div class="cta">
           <div>
             <h2 id="contact-title">Let’s talk.</h2>
-            <p class="cta-sub">Hiring for strategy, product or analytics? Send a note and I’ll get back to you.</p>
+            <p class="cta-sub">Hiring for strategy, pricing or analytics? Send a note below or reach me on LinkedIn.</p>
             <ul class="contact-list">
-              <li><a href="mailto:phucn@marshall.usc.edu"><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>phucn@marshall.usc.edu</a></li>
-              <li><a href="tel:+12132722966"><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>+1 (213) 272-2966</a></li>
+              <li><a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><span class="icon-wrap"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg></span>Message me on LinkedIn</a></li>
+              <li><a href="https://github.com/Robertn02" target="_blank" rel="noopener"><span class="icon-wrap"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg></span>github.com/Robertn02</a></li>
               <li><span><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>Los Angeles, California</span></li>
             </ul>
-            <div class="cta-social">
-              <a class="icon-btn" href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-              <a class="icon-btn" href="https://github.com/Robertn02" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg></a>
-            </div>
           </div>
 
           <form class="form" id="contact-form" novalidate>
@@ -494,7 +496,7 @@
           <a href="projects/">Projects</a>
           <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/Robertn02" target="_blank" rel="noopener">GitHub</a>
-          <a href="mailto:phucn@marshall.usc.edu">Email</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
       <div class="footer-bottom">

@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://robertn02.github.io/website/projects/">
   <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
   <meta name="theme-color" content="#0a1120">
-  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
+  <script>try{localStorage.removeItem('theme');if(sessionStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon.ico" sizes="any">
@@ -36,7 +36,6 @@
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
@@ -80,12 +79,12 @@
     <header class="container page-head">
       <a class="back" href="../"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Home</a>
       <h1>Projects</h1>
-      <p>Eleven analyses across finance, aviation, consumer and operations. Each card links to the code and write-up on GitHub.</p>
+      <p>Eleven analyses across finance, aviation, consumer and operations.</p>
 
       <div class="tabs" role="group" aria-label="Filter projects by role" data-filter>
         <button class="tab" type="button" data-value="all" aria-pressed="true">All <span class="tab-count"></span></button>
         <button class="tab" type="button" data-value="strategy" aria-pressed="false">Strategy <span class="tab-count"></span></button>
-        <button class="tab" type="button" data-value="product" aria-pressed="false">Product <span class="tab-count"></span></button>
+        <button class="tab" type="button" data-value="product" aria-pressed="false">Pricing and product <span class="tab-count"></span></button>
         <button class="tab" type="button" data-value="analytics" aria-pressed="false">Analytics <span class="tab-count"></span></button>
       </div>
     </header>
@@ -101,7 +100,7 @@
           <div class="work-body">
             <span class="tag">Airline revenue management</span>
             <h3><a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">Reroute: disruption seat allocation</a></h3>
-            <p>A misconnect-risk model (AUC 0.92) feeds a linear program that reallocates seats in about 7 ms.</p>
+            <p>A risk model (AUC 0.92) and linear program that reassign seats in about 7 ms.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">LightGBM</span><span class="chip">FastAPI</span></div>
           </div>
         </article>
@@ -115,7 +114,7 @@
           <div class="work-body">
             <span class="tag">EV and energy</span>
             <h3><a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">Rivian smart charging and incentives</a></h3>
-            <p>Shifting charging windows cuts emissions; a −3.2 price elasticity sizes a 10.7–21.3% sales lift.</p>
+            <p>Smarter charging cuts emissions; incentives could lift sales 11–21%.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Random forest</span><span class="chip">Elasticity</span></div>
           </div>
         </article>
@@ -129,7 +128,7 @@
           <div class="work-body">
             <span class="tag">Capital markets</span>
             <h3><a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">Robinhood retail investor herding</a></h3>
-            <p>Six stocks dominated retail holdings from 2018 to 2020 and moved almost in lockstep.</p>
+            <p>Six stocks dominated retail holdings and moved in lockstep.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">CRSP</span><span class="chip">RobinTrack</span></div>
           </div>
         </article>
@@ -143,7 +142,7 @@
           <div class="work-body">
             <span class="tag">Mobility</span>
             <h3><a href="https://github.com/Robertn02/Uber-NYC-Pickup-Demand-and-Hotspot-Analytics" target="_blank" rel="noopener">NYC Uber demand and hotspots</a></h3>
-            <p>Weekday commuting drives about 75% of pickups, peaking between 4 and 9 pm.</p>
+            <p>Weekday commuting drives about 75% of pickups.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">OLS</span><span class="chip">K-means</span></div>
           </div>
         </article>
@@ -157,7 +156,7 @@
           <div class="work-body">
             <span class="tag">Consumer subscriptions</span>
             <h3><a href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">What makes listeners pay for Premium</a></h3>
-            <p>Podcast variety, not age or device, predicts who is willing to upgrade.</p>
+            <p>Podcast variety, not age or device, predicts upgrades.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Logistic regression</span></div>
           </div>
         </article>
@@ -171,7 +170,7 @@
           <div class="work-body">
             <span class="tag">Quant research</span>
             <h3><a href="https://github.com/Robertn02/ETF-Sentiment-and-Crowdedness-Factor-Performance-Analysis" target="_blank" rel="noopener">ETF sentiment and crowding signals</a></h3>
-            <p>Long-short tests on 11 sector ETFs, 2005–2024: no significant alpha, honestly reported.</p>
+            <p>Long-short tests on 11 sector ETFs found no significant alpha.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Fama-French</span><span class="chip">Backtesting</span></div>
           </div>
         </article>
@@ -185,7 +184,7 @@
           <div class="work-body">
             <span class="tag">Factor investing</span>
             <h3><a href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis" target="_blank" rel="noopener">Fundamental indexing vs. market cap</a></h3>
-            <p>Pre-2005 CAPM alphas mostly disappear once size and value factors are controlled for.</p>
+            <p>Early alphas disappear once size and value factors are controlled.</p>
             <div class="chips"><span class="chip">CRSP</span><span class="chip">Compustat</span><span class="chip">CAPM</span></div>
           </div>
         </article>
@@ -211,7 +210,7 @@
           <div class="work-body">
             <span class="tag">Airports</span>
             <h3><a href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX" target="_blank" rel="noopener">LAX flight delay prediction</a></h3>
-            <p>Departure delay is the strongest predictor; delays cluster in summer and late evening.</p>
+            <p>Departure delay is the strongest predictor of late arrivals.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Decision trees</span></div>
           </div>
         </article>
@@ -224,7 +223,7 @@
           <div class="work-body">
             <span class="tag">Insurance pricing</span>
             <h3><a href="https://github.com/Robertn02/Insurance-Claim-Prediction-Machine-Learning-Pipeline-XGBoost-Tweedie" target="_blank" rel="noopener">Insurance claim prediction pipeline</a></h3>
-            <p>Loss cost and claim occurrence from one pipeline: XGBoost Tweedie plus a random forest.</p>
+            <p>One pipeline for claim cost and claim occurrence.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Random forest</span></div>
           </div>
         </article>
@@ -236,7 +235,7 @@
           <div class="work-body">
             <span class="tag">Semiconductors · Team project</span>
             <h3>Semiconductor yield analytics</h3>
-            <p>Throughput dashboards and anomaly detection to lift first-pass yield across product lines.</p>
+            <p>Dashboards and anomaly detection to lift first-pass yield.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Power BI</span><span class="chip">ML</span></div>
           </div>
         </article>
@@ -250,10 +249,10 @@
         <div class="cta cta--compact">
           <div>
             <h2 id="contact-title">Want the deeper dive?</h2>
-            <p class="cta-sub">Happy to walk through the data, the model and the decision behind any of these.</p>
+            <p class="cta-sub">Happy to walk through any of these.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-light" href="mailto:phucn@marshall.usc.edu"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+            <a class="btn btn-light" href="../#contact">Send a message <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <div class="cta-social">
               <a class="icon-btn" href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               <a class="icon-btn" href="https://github.com/Robertn02" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg></a>
@@ -275,7 +274,7 @@
           <a href="../projects/">Projects</a>
           <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/Robertn02" target="_blank" rel="noopener">GitHub</a>
-          <a href="mailto:phucn@marshall.usc.edu">Email</a>
+          <a href="../#contact">Contact</a>
         </nav>
       </div>
       <div class="footer-bottom">

@@ -226,8 +226,7 @@ h1, h2, h3, h4 {
 .portrait.rise { animation-name: rise-portrait; animation-duration: 1s; }
 @keyframes rise-portrait { from { opacity: 0; transform: translateY(24px) scale(0.97); } to { opacity: 1; transform: none; } }
 .float-card { animation: pop 0.7s var(--ease) both; }
-.float-card--a { animation-delay: 0.65s; }
-.float-card--b { animation-delay: 0.8s; }
+.float-card--b { animation-delay: 0.65s; }
 @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(0.94); } to { opacity: 1; transform: none; } }
 
 .hero-grid {
@@ -289,6 +288,12 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+/* Real logos sit on white so their brand colors read in both themes */
+.logo-box--real { background: #fff; border-color: rgba(15, 27, 51, 0.12); padding: 8px; }
+/* Logos that carry their own background fill the tile edge to edge */
+.logo-box--fill { padding: 0; border-color: var(--line-strong); }
+.logo-box--fill img { object-fit: cover; }
+.logo-box--tight { padding: 3px; }
 
 .cred > div > strong { display: block; color: var(--ink); font-size: 0.9375rem; font-weight: 600; line-height: 1.3; }
 .cred > div > span { display: block; color: var(--muted); font-size: 0.8125rem; line-height: 1.35; }
@@ -318,13 +323,11 @@ h1, h2, h3, h4 {
 .float-card > div > strong { display: block; color: var(--ink); font: 700 1.25rem/1.1 var(--font-display); letter-spacing: -0.02em; }
 .float-card > div > span { display: block; color: var(--muted); font-size: 0.8125rem; line-height: 1.3; }
 .float-card .float-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); }
-.float-card--a { top: 14%; left: -48px; }
 .float-card--b { bottom: 9%; right: -32px; }
 
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .portrait { justify-self: center; max-width: 380px; order: -1; margin: 8px auto 0; }
-  .float-card--a { left: -20px; }
   .float-card--b { right: -16px; }
 }
 
@@ -508,7 +511,9 @@ h1, h2, h3, h4 {
 .t-head h3 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .t-date { color: var(--muted); font-size: 0.875rem; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .t-org { color: var(--ink); font-size: 0.9375rem; font-weight: 500; }
-.t-item p:last-child { margin-top: 6px; color: var(--muted); font-size: 0.9375rem; }
+.t-points { display: grid; gap: 6px; margin-top: 10px; }
+.t-points li { position: relative; padding-left: 16px; color: var(--muted); font-size: 0.9375rem; line-height: 1.5; }
+.t-points li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
 .side { display: grid; gap: 20px; }
 
@@ -518,8 +523,11 @@ h1, h2, h3, h4 {
 
 .side-list { display: grid; gap: 16px; }
 .side-list li { display: grid; gap: 2px; }
-.side-list strong { color: var(--ink); font-size: 0.9375rem; font-weight: 600; line-height: 1.4; }
-.side-list span { color: var(--muted); font-size: 0.875rem; }
+.side-list li.row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.side-list li.row > span { flex: none; font-variant-numeric: tabular-nums; }
+.side-list li.edu { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: center; }
+.side-list strong { display: block; color: var(--ink); font-size: 0.9375rem; font-weight: 600; line-height: 1.4; }
+.side-list li:not(.edu) > span, .side-list li > div > span { display: block; color: var(--muted); font-size: 0.875rem; }
 
 @media (max-width: 960px) { .exp-grid { grid-template-columns: minmax(0, 1fr); } }
 
