@@ -12,8 +12,8 @@
   <meta property="og:description" content="Eleven analyses across finance, aviation, consumer and operations.">
   <meta property="og:url" content="https://robertn02.github.io/website/projects/">
   <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0c1424" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0a1120">
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon.ico" sizes="any">
@@ -37,6 +37,9 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></symbol>
@@ -45,7 +48,7 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-nav">
+  <header class="site-nav" id="top">
     <div class="container nav-inner">
       <a class="brand" href="../">
         <img src="../assets/img/robert-headshot.webp" width="36" height="36" alt="">
@@ -56,10 +59,15 @@
         <a href="../#experience">Experience</a>
         <a href="../#toolkit">Toolkit</a>
         <a href="../#about">About</a>
+        <a class="nav-contact" href="../#contact">Contact</a>
       </nav>
       <div class="nav-actions">
+        <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg class="icon on-dark" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon on-light" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
         <a class="btn btn-secondary btn-sm" href="../assets/Robert-Nguyen-Resume.pdf" data-resume hidden>Résumé</a>
-        <a class="btn btn-primary btn-sm" href="../#contact">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="../#contact">Contact</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
           <svg class="icon menu-open" aria-hidden="true"><use href="#i-menu"/></svg>
           <svg class="icon menu-close" aria-hidden="true"><use href="#i-close"/></svg>
@@ -86,6 +94,7 @@
       <div class="work-grid">
         <article class="work-card" data-for="strategy product analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-aa.webp" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
             <span class="metric">−18.9% revenue loss</span>
           </div>
@@ -99,6 +108,7 @@
 
         <article class="work-card" data-for="strategy product">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-rivian.webp" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
             <span class="metric">476k lbs CO₂ saved a year</span>
           </div>
@@ -112,6 +122,7 @@
 
         <article class="work-card" data-for="strategy analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-robinhood.webp" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
             <span class="metric">ρ &gt; 0.9 across top holdings</span>
           </div>
@@ -125,6 +136,7 @@
 
         <article class="work-card" data-for="product analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-uber.webp" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
             <span class="metric">R² 0.76 from time alone</span>
           </div>
@@ -138,6 +150,7 @@
 
         <article class="work-card" data-for="product">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-spotify.webp" width="467" height="316" loading="lazy" alt="Spotify logo over a person wearing headphones">
             <span class="metric">1 of 3 drivers mattered</span>
           </div>
@@ -151,6 +164,7 @@
 
         <article class="work-card" data-for="analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-etf.webp" width="600" height="338" loading="lazy" alt="ETF lettering over a stock chart">
             <span class="metric">Sharpe 0.07, a null result</span>
           </div>
@@ -164,6 +178,7 @@
 
         <article class="work-card" data-for="strategy analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-spy.webp" width="960" height="640" loading="lazy" alt="S&amp;P 500 ticker board">
             <span class="metric">Alpha vanishes after FF3</span>
           </div>
@@ -177,6 +192,7 @@
 
         <article class="work-card" data-for="strategy analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-walmart.webp" width="960" height="640" loading="lazy" alt="Walmart storefront">
           </div>
           <div class="work-body">
@@ -189,6 +205,7 @@
 
         <article class="work-card" data-for="strategy analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-lax.webp" width="768" height="432" loading="lazy" alt="LAX airport sign">
           </div>
           <div class="work-body">
@@ -201,6 +218,7 @@
 
         <article class="work-card" data-for="analytics">
           <div class="work-media">
+              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-insurance.webp" width="480" height="268" loading="lazy" alt="Insurance claim form">
           </div>
           <div class="work-body">
@@ -247,14 +265,23 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span data-year>2026</span> Robert Nguyen</p>
-      <nav aria-label="Footer">
-        <a href="../">Home</a>
-        <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Robertn02" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:phucn@marshall.usc.edu">Email</a>
-      </nav>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="../assets/img/robert-headshot.webp" width="44" height="44" alt="">
+          <div><strong>Robert Nguyen</strong><span>Strategy, product and analytics, Los Angeles</span></div>
+        </div>
+        <nav aria-label="Footer">
+          <a href="../projects/">Projects</a>
+          <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Robertn02" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:phucn@marshall.usc.edu">Email</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Robert Nguyen</p>
+        <a class="back-top" href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
     </div>
   </footer>
 

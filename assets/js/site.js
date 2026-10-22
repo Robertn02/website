@@ -2,6 +2,26 @@
   const ROLES = ['strategy', 'product', 'analytics'];
   const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw6dTnsOkly42s5ulUaM93uMCB_9UTckrBbT0KCVS-44XFllEsEbmcS3huk0SaB7TafGg/exec';
 
+  /* ---------- Theme (dark by default, light is opt-in) ---------- */
+
+  const root = document.documentElement;
+  const themeBtn = document.querySelector('[data-theme-toggle]');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const syncTheme = () => {
+    const light = root.dataset.theme === 'light';
+    if (themeBtn) themeBtn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+    if (themeMeta) themeMeta.setAttribute('content', light ? '#ffffff' : '#0a1120');
+  };
+  syncTheme();
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const light = root.dataset.theme !== 'light';
+      if (light) root.dataset.theme = 'light'; else delete root.dataset.theme;
+      try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch { /* storage blocked */ }
+      syncTheme();
+    });
+  }
+
   /* ---------- Navigation ---------- */
 
   const nav = document.querySelector('.site-nav');
