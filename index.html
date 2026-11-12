@@ -11,19 +11,21 @@
   <meta property="og:title" content="Robert Nguyen | Strategy, product and analytics">
   <meta property="og:description" content="I turn business questions into clear, data-backed decisions.">
   <meta property="og:url" content="https://robertn02.github.io/website/">
-  <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://robertn02.github.io/website/assets/img/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Robert Nguyen: strategy, pricing and business analytics">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0a1120">
   <script>try{localStorage.removeItem('theme');if(sessionStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Geist:wght@400..700&display=swap">
+  <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
-  <link rel="preload" as="image" href="assets/img/robert-headshot.webp">
+  <link rel="preload" as="image" href="assets/img/robert-headshot.webp" imagesrcset="assets/img/robert-headshot-560.webp 560w, assets/img/robert-headshot.webp 960w" imagesizes="(max-width: 600px) 250px, (max-width: 960px) 475px, 550px" fetchpriority="high">
 
   <script type="application/ld+json">
   {
@@ -42,13 +44,19 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <!-- Google Analytics: queued now, library loaded once the page is idle -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-C8GLRVX10Y');
+    addEventListener('load', function () {
+      (window.requestIdleCallback || setTimeout)(function () {
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y';
+        document.head.appendChild(s);
+      }, { timeout: 2500 });
+    });
   </script>
 </head>
 
@@ -80,7 +88,7 @@
   <header class="site-nav" id="top">
     <div class="container nav-inner">
       <a class="brand" href="./">
-        <img src="assets/img/robert-headshot.webp" width="36" height="36" alt="">
+        <img src="assets/img/robert-avatar.webp" width="36" height="36" alt="">
         <span>Robert Nguyen</span>
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Main">
@@ -95,7 +103,6 @@
           <svg class="icon on-dark" aria-hidden="true"><use href="#i-sun"/></svg>
           <svg class="icon on-light" aria-hidden="true"><use href="#i-moon"/></svg>
         </button>
-        <a class="btn btn-secondary btn-sm" href="assets/Robert-Nguyen-Resume.pdf" data-resume hidden>Résumé</a>
         <a class="btn btn-primary btn-sm nav-cta" href="#contact">Contact</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
           <svg class="icon menu-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -139,11 +146,11 @@
         </div>
 
         <div class="portrait rise" style="--d:1">
-          <img src="assets/img/robert-headshot.webp" width="960" height="960" alt="Portrait of Robert Nguyen" fetchpriority="high">
-          <div class="float-card float-card--b">
+          <img src="assets/img/robert-headshot.webp" srcset="assets/img/robert-headshot-560.webp 560w, assets/img/robert-headshot.webp 960w" sizes="(max-width: 600px) 250px, (max-width: 960px) 475px, 550px" width="960" height="960" alt="Portrait of Robert Nguyen" fetchpriority="high">
+          <a class="float-card float-card--b" href="projects/">
             <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span>
-            <div><strong>11 projects</strong><span>published on GitHub</span></div>
-          </div>
+            <div><strong>11 projects</strong><span>with case studies</span></div>
+          </a>
         </div>
       </div>
     </section>
@@ -204,16 +211,15 @@
         <div class="section-head">
           <div>
             <h2 id="work-title">Selected work</h2>
-            <p>Real data, real questions, and the number that mattered.</p>
+            <p>Real data, real questions. Open any card for the case study.</p>
           </div>
           <a class="link-arrow" href="projects/">All 11 projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
 
         <div class="work-grid">
-          <article class="work-card work-card--feature">
+          <article class="work-card work-card--feature" data-case="reroute">
             <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-              <img src="assets/img/project-aa.webp" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
+              <img src="assets/img/project-aa.webp" srcset="assets/img/project-aa-480.webp 480w, assets/img/project-aa-720.webp 720w, assets/img/project-aa.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), 750px" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
             </div>
             <div class="work-body">
               <span class="tag">Airline revenue management</span>
@@ -225,51 +231,51 @@
                 <div class="stat"><strong>7 ms</strong><span>average solve time</span></div>
               </div>
               <div class="chips"><span class="chip">Python</span><span class="chip">LightGBM</span><span class="chip">Linear programming</span><span class="chip">FastAPI</span><span class="chip">Docker</span></div>
+              <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
             </div>
           </article>
 
-          <article class="work-card">
+          <article class="work-card" data-case="rivian">
             <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-              <img src="assets/img/project-rivian.webp" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
+              <img src="assets/img/project-rivian.webp" srcset="assets/img/project-rivian-480.webp 480w, assets/img/project-rivian-720.webp 720w, assets/img/project-rivian.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
               <span class="metric">476k lbs CO₂ saved a year</span>
             </div>
             <div class="work-body">
               <span class="tag">EV and energy</span>
               <h3><a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">Rivian smart charging and incentives</a></h3>
               <p>Smarter charging cuts emissions; incentives could lift sales 11–21%.</p>
+              <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
             </div>
           </article>
 
-          <article class="work-card">
+          <article class="work-card" data-case="robinhood">
             <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-              <img src="assets/img/project-robinhood.webp" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
+              <img src="assets/img/project-robinhood.webp" srcset="assets/img/project-robinhood-480.webp 480w, assets/img/project-robinhood-720.webp 720w, assets/img/project-robinhood.webp 750w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
               <span class="metric">ρ &gt; 0.9 across top holdings</span>
             </div>
             <div class="work-body">
               <span class="tag">Capital markets</span>
               <h3><a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">Robinhood retail investor herding</a></h3>
               <p>Six stocks dominated retail holdings and moved in lockstep.</p>
+              <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
             </div>
           </article>
 
-          <article class="work-card">
+          <article class="work-card" data-case="uber">
             <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-              <img src="assets/img/project-uber.webp" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
+              <img src="assets/img/project-uber.webp" srcset="assets/img/project-uber-480.webp 480w, assets/img/project-uber-720.webp 720w, assets/img/project-uber.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
               <span class="metric">R² 0.76 from time alone</span>
             </div>
             <div class="work-body">
               <span class="tag">Mobility</span>
               <h3><a href="https://github.com/Robertn02/Uber-NYC-Pickup-Demand-and-Hotspot-Analytics" target="_blank" rel="noopener">NYC Uber demand and hotspots</a></h3>
               <p>Weekday commuting drives about 75% of pickups.</p>
+              <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
             </div>
           </article>
 
-          <article class="work-card">
+          <article class="work-card" data-case="spotify">
             <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
               <img src="assets/img/project-spotify.webp" width="467" height="316" loading="lazy" alt="Spotify logo over a person wearing headphones">
               <span class="metric">1 of 3 drivers mattered</span>
             </div>
@@ -277,6 +283,7 @@
               <span class="tag">Consumer subscriptions</span>
               <h3><a href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">What makes listeners pay for Premium</a></h3>
               <p>Podcast variety, not age or device, predicts upgrades.</p>
+              <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
             </div>
           </article>
         </div>
@@ -420,9 +427,9 @@
     <section class="section section--soft" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
         <div class="collage">
-          <figure><img src="assets/img/robert-brooklyn.webp" width="900" height="1200" loading="lazy" alt="Robert on the Brooklyn Bridge with the Manhattan skyline behind"><figcaption>New York</figcaption></figure>
-          <figure><img src="assets/img/life-ey-2.webp" width="1200" height="800" loading="lazy" alt="Robert with EY-Parthenon colleagues holding a trophy"><figcaption>EY-Parthenon team</figcaption></figure>
-          <figure><img src="assets/img/life-champion.webp" width="1200" height="800" loading="lazy" alt="USC soccer team celebrating with a trophy"><figcaption>USC soccer champions</figcaption></figure>
+          <figure><img src="assets/img/robert-brooklyn.webp" srcset="assets/img/robert-brooklyn-600.webp 600w, assets/img/robert-brooklyn.webp 900w" sizes="(max-width: 960px) 55vw, 420px" width="900" height="1200" loading="lazy" alt="Robert on the Brooklyn Bridge with the Manhattan skyline behind"><figcaption>New York</figcaption></figure>
+          <figure><img src="assets/img/life-ey-2.webp" srcset="assets/img/life-ey-2-800.webp 800w, assets/img/life-ey-2.webp 1200w" sizes="(max-width: 960px) 45vw, 410px" width="1200" height="800" loading="lazy" alt="Robert with EY-Parthenon colleagues holding a trophy"><figcaption>EY-Parthenon team</figcaption></figure>
+          <figure><img src="assets/img/life-champion.webp" srcset="assets/img/life-champion-800.webp 800w, assets/img/life-champion.webp 1200w" sizes="(max-width: 960px) 45vw, 410px" width="1200" height="800" loading="lazy" alt="USC soccer team celebrating with a trophy"><figcaption>USC soccer champions</figcaption></figure>
         </div>
 
         <div class="about-copy">
@@ -489,7 +496,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img src="assets/img/robert-headshot.webp" width="44" height="44" alt="">
+          <img src="assets/img/robert-avatar.webp" width="44" height="44" alt="">
           <div><strong>Robert Nguyen</strong><span>Strategy, product and analytics, Los Angeles</span></div>
         </div>
         <nav aria-label="Footer">

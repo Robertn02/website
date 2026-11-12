@@ -11,25 +11,34 @@
   <meta property="og:title" content="Projects | Robert Nguyen">
   <meta property="og:description" content="Eleven analyses across finance, aviation, consumer and operations.">
   <meta property="og:url" content="https://robertn02.github.io/website/projects/">
-  <meta property="og:image" content="https://robertn02.github.io/website/assets/img/robert-og.jpg">
+  <meta property="og:image" content="https://robertn02.github.io/website/assets/img/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Robert Nguyen: strategy, pricing and business analytics">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0a1120">
   <script>try{localStorage.removeItem('theme');if(sessionStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon.ico" sizes="any">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Geist:wght@400..700&display=swap">
+  <link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/site.css">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <!-- Google Analytics: queued now, library loaded once the page is idle -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-C8GLRVX10Y');
+    addEventListener('load', function () {
+      (window.requestIdleCallback || setTimeout)(function () {
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y';
+        document.head.appendChild(s);
+      }, { timeout: 2500 });
+    });
   </script>
 </head>
 
@@ -41,6 +50,8 @@
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16v-4M12 16V8M17 16V5"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
   </svg>
@@ -50,7 +61,7 @@
   <header class="site-nav" id="top">
     <div class="container nav-inner">
       <a class="brand" href="../">
-        <img src="../assets/img/robert-headshot.webp" width="36" height="36" alt="">
+        <img src="../assets/img/robert-avatar.webp" width="36" height="36" alt="">
         <span>Robert Nguyen</span>
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Main">
@@ -65,7 +76,6 @@
           <svg class="icon on-dark" aria-hidden="true"><use href="#i-sun"/></svg>
           <svg class="icon on-light" aria-hidden="true"><use href="#i-moon"/></svg>
         </button>
-        <a class="btn btn-secondary btn-sm" href="../assets/Robert-Nguyen-Resume.pdf" data-resume hidden>Résumé</a>
         <a class="btn btn-primary btn-sm nav-cta" href="../#contact">Contact</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
           <svg class="icon menu-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -79,7 +89,7 @@
     <header class="container page-head">
       <a class="back" href="../"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Home</a>
       <h1>Projects</h1>
-      <p>Eleven analyses across finance, aviation, consumer and operations.</p>
+      <p>Eleven analyses across finance, aviation, consumer and operations. Open any card for the case study.</p>
 
       <div class="tabs" role="group" aria-label="Filter projects by role" data-filter>
         <button class="tab" type="button" data-value="all" aria-pressed="true">All <span class="tab-count"></span></button>
@@ -89,12 +99,12 @@
       </div>
     </header>
 
-    <section class="container" aria-label="Project list">
+    <section class="container" aria-labelledby="list-title">
+      <h2 class="sr-only" id="list-title">All projects</h2>
       <div class="work-grid">
-        <article class="work-card" data-for="strategy product analytics">
+        <article class="work-card" data-case="reroute" data-for="strategy product analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-aa.webp" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
+            <img src="../assets/img/project-aa.webp" srcset="../assets/img/project-aa-480.webp 480w, ../assets/img/project-aa-720.webp 720w, ../assets/img/project-aa.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="540" loading="lazy" alt="American Airlines jet taking off">
             <span class="metric">−18.9% revenue loss</span>
           </div>
           <div class="work-body">
@@ -102,13 +112,13 @@
             <h3><a href="https://github.com/Robertn02/Airline-Revenue-Management-IROPS-Seat-Allocation-Optimizer" target="_blank" rel="noopener">Reroute: disruption seat allocation</a></h3>
             <p>A risk model (AUC 0.92) and linear program that reassign seats in about 7 ms.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">LightGBM</span><span class="chip">FastAPI</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="strategy product">
+        <article class="work-card" data-case="rivian" data-for="strategy product">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-rivian.webp" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
+            <img src="../assets/img/project-rivian.webp" srcset="../assets/img/project-rivian-480.webp 480w, ../assets/img/project-rivian-720.webp 720w, ../assets/img/project-rivian.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="540" loading="lazy" alt="Rivian truck driving off-road">
             <span class="metric">476k lbs CO₂ saved a year</span>
           </div>
           <div class="work-body">
@@ -116,13 +126,13 @@
             <h3><a href="https://github.com/Robertn02/Rivian-SCE-EV-Smart-Charging-Emissions-and-Incentive-Analysis" target="_blank" rel="noopener">Rivian smart charging and incentives</a></h3>
             <p>Smarter charging cuts emissions; incentives could lift sales 11–21%.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Random forest</span><span class="chip">Elasticity</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="strategy analytics">
+        <article class="work-card" data-case="robinhood" data-for="strategy analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-robinhood.webp" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
+            <img src="../assets/img/project-robinhood.webp" srcset="../assets/img/project-robinhood-480.webp 480w, ../assets/img/project-robinhood-720.webp 720w, ../assets/img/project-robinhood.webp 750w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="750" height="500" loading="lazy" alt="Robinhood app on a phone">
             <span class="metric">ρ &gt; 0.9 across top holdings</span>
           </div>
           <div class="work-body">
@@ -130,13 +140,13 @@
             <h3><a href="https://github.com/Robertn02/Robinhood-CRSP-Retail-Investor-Flow-Behavioral-Analytics" target="_blank" rel="noopener">Robinhood retail investor herding</a></h3>
             <p>Six stocks dominated retail holdings and moved in lockstep.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">CRSP</span><span class="chip">RobinTrack</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="product analytics">
+        <article class="work-card" data-case="uber" data-for="product analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-uber.webp" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
+            <img src="../assets/img/project-uber.webp" srcset="../assets/img/project-uber-480.webp 480w, ../assets/img/project-uber-720.webp 720w, ../assets/img/project-uber.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="640" loading="lazy" alt="Uber logo on a phone">
             <span class="metric">R² 0.76 from time alone</span>
           </div>
           <div class="work-body">
@@ -144,12 +154,12 @@
             <h3><a href="https://github.com/Robertn02/Uber-NYC-Pickup-Demand-and-Hotspot-Analytics" target="_blank" rel="noopener">NYC Uber demand and hotspots</a></h3>
             <p>Weekday commuting drives about 75% of pickups.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">OLS</span><span class="chip">K-means</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="product">
+        <article class="work-card" data-case="spotify" data-for="product">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-spotify.webp" width="467" height="316" loading="lazy" alt="Spotify logo over a person wearing headphones">
             <span class="metric">1 of 3 drivers mattered</span>
           </div>
@@ -158,13 +168,13 @@
             <h3><a href="https://github.com/Robertn02/Spotify-Premium-Subscription-Behavior-Modeling-and-Driver-Analysis" target="_blank" rel="noopener">What makes listeners pay for Premium</a></h3>
             <p>Podcast variety, not age or device, predicts upgrades.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Logistic regression</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="analytics">
+        <article class="work-card" data-case="etf" data-for="analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-etf.webp" width="600" height="338" loading="lazy" alt="ETF lettering over a stock chart">
+            <img src="../assets/img/project-etf.webp" srcset="../assets/img/project-etf-480.webp 480w, ../assets/img/project-etf.webp 600w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="600" height="338" loading="lazy" alt="ETF lettering over a stock chart">
             <span class="metric">Sharpe 0.07, a null result</span>
           </div>
           <div class="work-body">
@@ -172,13 +182,13 @@
             <h3><a href="https://github.com/Robertn02/ETF-Sentiment-and-Crowdedness-Factor-Performance-Analysis" target="_blank" rel="noopener">ETF sentiment and crowding signals</a></h3>
             <p>Long-short tests on 11 sector ETFs found no significant alpha.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Fama-French</span><span class="chip">Backtesting</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="strategy analytics">
+        <article class="work-card" data-case="smartbeta" data-for="strategy analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-spy.webp" width="960" height="640" loading="lazy" alt="S&amp;P 500 ticker board">
+            <img src="../assets/img/project-spy.webp" srcset="../assets/img/project-spy-480.webp 480w, ../assets/img/project-spy-720.webp 720w, ../assets/img/project-spy.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="640" loading="lazy" alt="S&amp;P 500 ticker board">
             <span class="metric">Alpha vanishes after FF3</span>
           </div>
           <div class="work-body">
@@ -186,38 +196,38 @@
             <h3><a href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis" target="_blank" rel="noopener">Fundamental indexing vs. market cap</a></h3>
             <p>Early alphas disappear once size and value factors are controlled.</p>
             <div class="chips"><span class="chip">CRSP</span><span class="chip">Compustat</span><span class="chip">CAPM</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="strategy analytics">
+        <article class="work-card" data-case="walmart" data-for="strategy analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-walmart.webp" width="960" height="640" loading="lazy" alt="Walmart storefront">
+            <img src="../assets/img/project-walmart.webp" srcset="../assets/img/project-walmart-480.webp 480w, ../assets/img/project-walmart-720.webp 720w, ../assets/img/project-walmart.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="640" loading="lazy" alt="Walmart storefront">
           </div>
           <div class="work-body">
             <span class="tag">Retail</span>
             <h3><a href="https://github.com/Robertn02/Walmart-Retail-Performance-Analytics-Sales-Drivers-and-Holiday-Effects" target="_blank" rel="noopener">Walmart sales drivers and holiday effects</a></h3>
             <p>Fixed-effects regression, holiday uplift and K-means segmentation across stores.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Regression</span><span class="chip">K-means</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="strategy analytics">
+        <article class="work-card" data-case="lax" data-for="strategy analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
-            <img src="../assets/img/project-lax.webp" width="768" height="432" loading="lazy" alt="LAX airport sign">
+            <img src="../assets/img/project-lax.webp" srcset="../assets/img/project-lax-480.webp 480w, ../assets/img/project-lax-720.webp 720w, ../assets/img/project-lax.webp 768w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="768" height="432" loading="lazy" alt="LAX airport sign">
           </div>
           <div class="work-body">
             <span class="tag">Airports</span>
             <h3><a href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX" target="_blank" rel="noopener">LAX flight delay prediction</a></h3>
             <p>Departure delay is the strongest predictor of late arrivals.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Decision trees</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="analytics">
+        <article class="work-card" data-case="insurance" data-for="analytics">
           <div class="work-media">
-              <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
             <img src="../assets/img/project-insurance.webp" width="480" height="268" loading="lazy" alt="Insurance claim form">
           </div>
           <div class="work-body">
@@ -225,18 +235,20 @@
             <h3><a href="https://github.com/Robertn02/Insurance-Claim-Prediction-Machine-Learning-Pipeline-XGBoost-Tweedie" target="_blank" rel="noopener">Insurance claim prediction pipeline</a></h3>
             <p>One pipeline for claim cost and claim occurrence.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Random forest</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
 
-        <article class="work-card" data-for="strategy analytics">
+        <article class="work-card" data-case="semiconductor" data-for="strategy analytics">
           <div class="work-media">
-            <img src="../assets/img/project-semiconductor.webp" width="960" height="556" loading="lazy" alt="Semiconductor wafer">
+            <img src="../assets/img/project-semiconductor.webp" srcset="../assets/img/project-semiconductor-480.webp 480w, ../assets/img/project-semiconductor-720.webp 720w, ../assets/img/project-semiconductor.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 44px), 384px" width="960" height="556" loading="lazy" alt="Semiconductor wafer">
           </div>
           <div class="work-body">
             <span class="tag">Semiconductors · Team project</span>
-            <h3>Semiconductor yield analytics</h3>
+            <h3><a href="?case=semiconductor">Semiconductor yield analytics</a></h3>
             <p>Dashboards and anomaly detection to lift first-pass yield.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Power BI</span><span class="chip">ML</span></div>
+            <span class="card-cta" aria-hidden="true">Case study <svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </article>
       </div>
@@ -267,7 +279,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img src="../assets/img/robert-headshot.webp" width="44" height="44" alt="">
+          <img src="../assets/img/robert-avatar.webp" width="44" height="44" alt="">
           <div><strong>Robert Nguyen</strong><span>Strategy, product and analytics, Los Angeles</span></div>
         </div>
         <nav aria-label="Footer">
